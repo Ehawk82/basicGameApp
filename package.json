@@ -1,0 +1,22 @@
+{
+  "name": "basicgameapp",
+  "version": "1.0.0",
+  "description": "-a basic game template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ehawk82/basicGameApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ehawk82/basicGameApp/issues"
+  },
+  "homepage": "https://github.com/Ehawk82/basicGameApp#readme",
+  "devDependencies": {
+    "gScript2019": "git+https://github.com/Ehawk82/gScript2019.git"
+  }
+}

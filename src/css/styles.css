@@ -1,0 +1,191 @@
+/*DOM*/
+html {
+
+}
+body {
+	height:100vh;
+	width:100vw;
+	overflow: hidden;
+
+}
+button {
+	background-color: #8C8474;
+	border:none;
+	outline: none;
+	color:#F2D5BB;
+}
+button:active {
+	background-color: #7C7464;
+	color: #E2C5AB;
+}
+/*CLASS*/
+.dvContain {
+	background-color: #0D0D0D;
+	height: inherit;
+	width: inherit;
+	display: flow-root;
+	overflow: hidden;
+}
+.startPage {
+	background-color: #97A2A6;
+	height: auto;
+	width: 20vw;
+	margin: 10vh auto;
+
+}
+.startBtns {
+	display: -webkit-box;
+	padding: .5vw;
+	width:10vw;
+	margin: 20px 0;
+
+}
+.startMenu_full {
+	width: fit-content;
+    margin: 20vh auto 0 auto;
+    padding: 10px 0;
+}
+.startMenu {
+	width: fit-content;
+    margin: -100vh auto 0 auto;
+    padding: 10px 0;
+}
+.myScreen {
+	background-color: #97A2A6;
+	position: absolute;
+    top:-100vh;
+    left:0;
+	display: -webkit-box;
+	height: inherit;
+	width: inherit;
+}
+.myScreen_full {
+	background-color: #97A2A6;
+	position: absolute;
+    top:0;
+    left:0;
+	display: -webkit-box;
+	height: inherit;
+	width: inherit;
+}
+.pauseBtn {
+	position: absolute;
+	top:10px;
+	right:10px;
+}
+/*ID*/
+
+/*MULTIS*/
+html, body {
+	margin:0;
+	padding:0;
+}
+.title {
+	text-indent:1vw; 
+}
+.startBtns, .pauseBtn {
+	font-size:120%;
+	font-weight: 800;
+}
+.startBtns {
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+.startMenu,.startMenu_full,.myScreen_full,.myScreen {
+	transition: 666ms all;
+}
+/*KEYFRAMES*/
+
+/*MEDIA QUERIES*/
+/* phones, 600px */
+@media only screen and (max-width: 600px) {
+/*DOM*/
+
+/*CLASS*/
+.startBtns {
+
+	width:18vw;
+
+}
+
+/*ID*/
+
+/*MULTIS*/
+
+/*KEYFRAMES*/
+
+}
+
+/* tablets and large phones */
+@media only screen and (min-width: 600px) {
+/*DOM*/
+
+/*CLASS*/
+.startBtns {
+
+	width:17vw;
+
+}
+
+/*ID*/
+
+/*MULTIS*/
+
+/*KEYFRAMES*/
+
+}
+
+/* landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+/*DOM*/
+
+/*CLASS*/
+.startBtns {
+
+	width:17vw;
+
+}
+/*ID*/
+
+/*MULTIS*/
+
+/*KEYFRAMES*/
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+/*DOM*/
+
+/*CLASS*/
+.startBtns {
+
+	width:16vw;
+
+}
+/*ID*/
+
+/*MULTIS*/
+
+/*KEYFRAMES*/
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+/*DOM*/
+
+/*CLASS*/
+.startBtns {
+
+	width:15vw;
+
+}
+/*ID*/
+
+/*MULTIS*/
+
+/*KEYFRAMES*/
+}
