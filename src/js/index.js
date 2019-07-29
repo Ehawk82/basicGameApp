@@ -1,26 +1,41 @@
 var myUI,stBtnName,bgauser;
+/*
+if (!Date.now) {
+    Date.now = function() { var ts; return ts = Math.floor(Date.now() / 1000) }
+}
+console.log(ts);
+*/
 bgauser = {
-	gBool: false,
-	loadFiles: 0,
-	fileLookup: 0,
-	userString: "",
-	appVolume: 0.5,
-	loopBool: false,
-	loopSpeed: 100,
-	member: false,
-	collection: {},
-	notes: {}
-};
-stBtnName = ["NEW","LOAD","SETTINGS","CREDITS"];
-
-myUI = {
-	init: function(){
-		LSinit("bGAuser", bgauser);
-
-		var bbb = parseLS("bGAuser");
-		myUI.loadUnits(bbb);
+	gBool: false,//is a game loaded?
+	loadFiles: {},//saved game
+	fileLookup: "",//current load name
+	userString: "",//a string that can be parse to define inventory
+	appVolume: 0.5,//global volume
+	ambVolume: 0.5,//ambient volume
+	musicVolume: 0.5,//music volume
+	loopBool: false,//is the game loop active
+	loopSpeed: 100,//the speed of the loop
+	member: false,//boolean for admin controls
+	collection: {},//add a nest of data here for any reason
+	notes: {},//the history log of user actions
+	gameTimeStamps: {//timestamps
+		startingTime: "",//starting time of active game
+		lastTimeOut: "",//timestamp recorded at last exit
+		currentTime: "",//keeping track of current time in seconds
+		diffTime: ""//return difference between last time out and current time
 	},
-	loadUnits: function(bbb){
+	cheats: false//cheats of course
+};
+stBtnName = ["NEW","LOAD","SETTINGS","CREDITS"];//names of the buttons on the main menu
+
+myUI = {//main User Interface
+	init: function(){//initialize and startup
+		LSinit("bGAuser", bgauser);//run init for localStorage item
+
+		var bbb = parseLS("bGAuser");//call the users saved data
+		myUI.loadUnits(bbb);//load the program
+	},
+	loadUnits: function(bbb){//load the program
 		var dvContain = createEle("div"),
 			startMenu = createEle("div"),
 		    startPage = createEle("div"),
@@ -28,7 +43,7 @@ myUI = {
 
 		startMenu.className = "startMenu";
 
-		for (var i = 0; i < stBtnName.length; i++) {
+		for (var i = 0; i < stBtnName.length; i++) {//create some buttons
 			var startBtns = createEle("button");
 
 			startBtns.className = "startBtns";
@@ -50,7 +65,6 @@ myUI = {
 
 		setTimeout(function(){
 			makeFull(startMenu);
-			//console.log(bbb);
 		},666);
 	},
 	stBtnFunc: function(i,startMenu,myScreen){
