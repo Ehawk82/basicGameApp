@@ -1,12 +1,26 @@
-var myUI, stBtnName;
-
+var myUI,stBtnName,bgauser;
+bgauser = {
+	gBool: false,
+	loadFiles: 0,
+	fileLookup: 0,
+	userString: "",
+	appVolume: 0.5,
+	loopBool: false,
+	loopSpeed: 100,
+	member: false,
+	collection: {},
+	notes: {}
+};
 stBtnName = ["NEW","LOAD","SETTINGS","CREDITS"];
 
 myUI = {
 	init: function(){
-		myUI.loadUnits();
+		LSinit("bGAuser", bgauser);
+
+		var bbb = parseLS("bGAuser");
+		myUI.loadUnits(bbb);
 	},
-	loadUnits: function(){
+	loadUnits: function(bbb){
 		var dvContain = createEle("div"),
 			startMenu = createEle("div"),
 		    startPage = createEle("div"),
@@ -36,6 +50,7 @@ myUI = {
 
 		setTimeout(function(){
 			makeFull(startMenu);
+			//console.log(bbb);
 		},666);
 	},
 	stBtnFunc: function(i,startMenu,myScreen){
