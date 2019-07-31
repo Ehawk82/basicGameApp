@@ -1,12 +1,19 @@
 /*DOM*/
 html {
-
+	font-family: "Helvetica";
 }
 body {
 	height:100vh;
 	width:100vw;
 	overflow: hidden;
 
+}
+h1 {
+	display: -webkit-inline-box;
+	width: 100vw;
+	font-size: 6vh;
+	margin:0;
+	padding: 0;
 }
 button {
 	background-color: #8C8474;
@@ -18,6 +25,14 @@ button:active {
 	background-color: #7C7464;
 	color: #E2C5AB;
 }
+button:hover {
+	background-color: #B0A692;
+	color: #F2E1BB;
+}
+button:disabled {
+	background-color: #615B4E;
+	color: #453C34;
+}
 /*CLASS*/
 .dvContain {
 	background-color: #0D0D0D;
@@ -27,7 +42,6 @@ button:active {
 	overflow: hidden;
 }
 .startPage {
-	background-color: #97A2A6;
 	height: auto;
 	width: 20vw;
 	margin: 10vh auto;
@@ -35,11 +49,9 @@ button:active {
 }
 .startBtns {
 	display: -webkit-box;
-	padding: .5vw;
-	width:10vw;
-	margin: 20px 0;
-
+	margin:10px 0;
 }
+
 .startMenu_full {
 	width: fit-content;
     margin: 20vh auto 0 auto;
@@ -51,7 +63,6 @@ button:active {
     padding: 10px 0;
 }
 .myScreen {
-	background-color: #97A2A6;
 	position: absolute;
     top:-100vh;
     left:0;
@@ -60,7 +71,6 @@ button:active {
 	width: inherit;
 }
 .myScreen_full {
-	background-color: #97A2A6;
 	position: absolute;
     top:0;
     left:0;
@@ -68,10 +78,42 @@ button:active {
 	height: inherit;
 	width: inherit;
 }
+.title {
+	height: 5.5vh;
+	font-size:5.5vh;
+}
 .pauseBtn {
 	position: absolute;
-	top:10px;
-	right:10px;
+	top:0;
+	right:0;
+	height: 5.5vh;
+	width: 6vh;
+}
+.container {
+    display: block;
+    width: 100vw;
+    height: 94.5vh;
+    position: absolute;
+    left: 0;
+    top: 5.5vh;
+
+}
+.devLog {
+	background-color: black;
+	display: block;
+	height:-webkit-fill-available;
+	width:-webkit-fill-available;
+	overflow: hidden;
+}
+.devLog p {
+	background-color: black;
+	width:max-content;
+	margin: 10px auto;
+	border-bottom: 1px solid #F2D5BB;
+}
+.cStuff {
+	width:50vw;
+	margin:0 auto;
 }
 /*ID*/
 
@@ -82,11 +124,18 @@ html, body {
 }
 .title {
 	text-indent:1vw; 
+} 
+.cStuff,.devLog p,.pauseBtn{
+	text-align: center;
 }
 .startBtns, .pauseBtn {
-	font-size:120%;
-	font-weight: 800;
+	font-size:3vh;
 }
+.myScreen, .myScreen_full,.startPage {
+	background-color: #383C3D;
+	color:#F2D5BB;
+}
+
 .startBtns {
 	-webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -98,6 +147,10 @@ html, body {
 .startMenu,.startMenu_full,.myScreen_full,.myScreen {
 	transition: 666ms all;
 }
+.container,.devLog{
+	box-shadow: 0 0 1px inset gold,0 0 1px inset gold,0 0 2px inset silver,0 0 3px inset white,0 0 3px inset white;
+}
+
 /*KEYFRAMES*/
 
 /*MEDIA QUERIES*/
