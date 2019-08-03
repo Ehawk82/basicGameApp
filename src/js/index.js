@@ -106,6 +106,7 @@ myUI = {
 
 			if(i === 2){
 				thingy = "SETTINGS";
+				items.onload = credits.page(container,items);
 			}
 
 			if(i === 3){
