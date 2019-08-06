@@ -98,15 +98,18 @@ myUI = {
 			
 			if(i === 0){
 				thingy = "NEW GAME";
+				items.onload = newGameProgram.page(container,items);
+
 			}
 
 			if(i === 1){
 				thingy = "LOAD GAME";
+				items.onload = loader.page(container,items);
 			}
 
 			if(i === 2){
 				thingy = "SETTINGS";
-				items.onload = credits.page(container,items);
+				items.onload = settings.page(container,items);
 			}
 
 			if(i === 3){

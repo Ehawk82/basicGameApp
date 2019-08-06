@@ -11,7 +11,6 @@ body {
 h1 {
 	display: -webkit-inline-box;
 	width: 100vw;
-	font-size: 6vh;
 	margin:0;
 	padding: 0;
 }
@@ -80,7 +79,7 @@ button:disabled {
 }
 .title {
 	height: 5.5vh;
-	font-size:5.5vh;
+	font-size:5vh;
 }
 .pauseBtn {
 	position: absolute;
@@ -98,14 +97,14 @@ button:disabled {
     top: 5.5vh;
 
 }
-.devLog {
+.devLog, .settContainer, .loadContainer, .newGameContainer {
 	background-color: black;
 	display: block;
 	height:-webkit-fill-available;
 	width:-webkit-fill-available;
 	overflow: hidden;
 }
-.devLog p {
+.devLog p, .settContainer p, .loadContainer p, .newGameContainer p {
 	background-color: black;
 	width:max-content;
 	margin: 10px auto;
@@ -131,6 +130,9 @@ html, body {
 .startBtns, .pauseBtn {
 	font-size:3vh;
 }
+html,h1,button,p,div{
+	font-weight: 300;
+}
 .myScreen, .myScreen_full,.startPage {
 	background-color: #383C3D;
 	color:#F2D5BB;
@@ -147,7 +149,7 @@ html, body {
 .startMenu,.startMenu_full,.myScreen_full,.myScreen {
 	transition: 666ms all;
 }
-.container,.devLog{
+.devLog, .settContainer, .loadContainer, .newGameContainer {
 	box-shadow: 0 0 1px inset gold,0 0 1px inset gold,0 0 2px inset silver,0 0 3px inset white,0 0 3px inset white;
 }
 
