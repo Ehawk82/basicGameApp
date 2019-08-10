@@ -9,11 +9,8 @@ var newGameProgram = {
 
 		charType.className = "fItems";
 		charType.name = "character_type";
-		
 		for (var i = 0; i < charOptions.length; i++) {
 			var options = createEle("option");
-
-			console.log(charOptions[i]);
 
 			options.innerHTML = charOptions[i];
 

@@ -114,6 +114,18 @@ button:disabled {
 	width:50vw;
 	margin:0 auto;
 }
+.form {
+	width: -webkit-fill-available;
+	height: 85vh;
+	margin:5vh 20vw;
+	display: -webkit-box;
+	background-color: white;
+}
+.fItems {
+	display: -webkit-inline-box;
+    width: -webkit-fill-available;
+    margin: 10px 20vw;
+}
 /*ID*/
 
 /*MULTIS*/
