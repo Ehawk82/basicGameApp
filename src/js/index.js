@@ -7,8 +7,8 @@ console.log(ts);
 */
 bgauser = {
 	gBool: false,
-	loadFiles: {},
-	fileLookup: "",
+	loadFiles: [],
+	fileLookup: 0,
 	userString: "",
 	appVolume: 0.5,
 	ambVolume: 0.5,
@@ -99,7 +99,6 @@ myUI = {
 			if(i === 0){
 				thingy = "NEW GAME";
 				items.onload = newGameProgram.page(container,items);
-
 			}
 
 			if(i === 1){

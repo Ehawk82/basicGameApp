@@ -32,6 +32,21 @@ button:disabled {
 	background-color: #615B4E;
 	color: #453C34;
 }
+::selection {
+  background: #ffb7b7;
+}
+input[type=text] {
+	text-indent: 5px;
+}
+input[type=text], textarea, select {
+  -webkit-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 2px solid #ffb7b7;
+  line-height: 30px;
+}
+select {
+	padding: 5px 0;
+}
 /*CLASS*/
 .dvContain {
 	background-color: #0D0D0D;
@@ -116,15 +131,27 @@ button:disabled {
 }
 .form {
 	width: -webkit-fill-available;
-	height: 85vh;
+	height: 70vh;
 	margin:5vh 20vw;
 	display: -webkit-box;
 	background-color: white;
+	padding: 5vh 0;
+}
+.form button {
+	position: absolute;
+    bottom: 11vh;
+    width: 5vw;
+    height: 5vw;
+    left: 47.5vw;
+
 }
 .fItems {
 	display: -webkit-inline-box;
     width: -webkit-fill-available;
     margin: 10px 20vw;
+}
+.container {
+	display: block;
 }
 /*ID*/
 
