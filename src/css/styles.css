@@ -153,6 +153,24 @@ select {
 .container {
 	display: block;
 }
+.container div div {
+	padding: 3px;
+}
+.loadBox div {
+	display: inline-block;
+	width:150px;
+	height:150px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+	cursor: pointer;
+	background-color: #8C8474;
+	color:#F2D5BB;
+}
+.loadBox div:hover {
+	background-color: #B0A692;
+	color: #F2E1BB;
+}
 /*ID*/
 
 /*MULTIS*/

@@ -67,12 +67,16 @@ var newGameProgram = {
 	submitForm: function(nameIn,charType,regType,elemType,ngBtn){
 		return function(){
 			var bbb = parseLS("bGAuser"),gfObject, startBtns = bySelAll(".startBtns");
-
-
+			var ctc = charType.value.split("TYPE ");
+			var rtr = regType.value.split("AREA ");
+			var ete = elemType.value.split("ELEM ");
 
 			gfObject = {
 				key: "gf" + bbb.fileLookup,
-				name: nameIn.value
+				name: nameIn.value,
+				cType: ctc[1],
+				rType: rtr[1],
+				eType: ete[1]
 			};
 
 			bbb.loadFiles[bbb.fileLookup] = gfObject;
@@ -82,8 +86,13 @@ var newGameProgram = {
 			saveLS("bGAuser", bbb);
 
 			startBtns[1].disabled = false;
+
+			var title = bySel(".title");
+			title.innerHTML = " ";
+			
 			items.remove();
 
+			game.init(bbb,nameIn.value);
 		}
 	}
 };
