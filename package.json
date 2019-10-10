@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Ehawk82/basicGameApp#readme",
   "devDependencies": {
-    "gScript2019": "git+https://github.com/Ehawk82/gScript2019.git"
+    
   }
 }
