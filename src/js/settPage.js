@@ -1,25 +1,40 @@
+var labelNames = ["ALL SOUND","MAIN","MUSIC","AMBIENT"];
 var settings = {
-	page: function(container,items){
+	page: function(container,items,bbb){
 		var settContainer = createEle("div"),
 			sLabel = createEle("p"),
-			sStuff = createEle("div"),
-			rng1 = createEle("input");
+			sStuff = createEle("div");
 
-		rng1.className = "ranges";
-		rng1.type = "range";
-		rng1.max = 1;
-		rng1.min = 0;
-		rng1.step = .1;
-		rng1.value = .5;
+		for (var i = 0; i < 3; i++) {
+			var rngs = createEle("input"),
+			    lbls = createEle("label");
 
+			lbls.innerHTML = labelNames[i];
+			lbls.className = "labels";
+
+			rngs.className = "ranges";
+			rngs.type = "range";
+			rngs.max = 1;
+			rngs.min = 0;
+			rngs.step = .1;
+			rngs.value = .5;
+			rngs.onchange = settings.soundFunc(rngs,i,bbb);
+
+			sStuff.append(lbls,rngs);
+		}
+	
 		sLabel.innerHTML = "SOUND SETTINGS";
 
 		sStuff.className = "cStuff";
-		sStuff.append(rng1);
 
 		settContainer.className = "settContainer";
 		settContainer.append(sLabel,sStuff);
 
 		items.append(settContainer);
+	},
+	soundFunc: function(rngs,i,bbb) {
+		return function(){
+			console.log(i);
+		}
 	}
 };

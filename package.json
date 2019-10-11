@@ -16,7 +16,8 @@
     "url": "https://github.com/Ehawk82/basicGameApp/issues"
   },
   "homepage": "https://github.com/Ehawk82/basicGameApp#readme",
-  "devDependencies": {
-    
+  "devDependencies": {},
+  "dependencies": {
+    "gscript2020": "git+https://github.com/Ehawk82/gScript2020.git"
   }
 }

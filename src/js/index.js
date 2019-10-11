@@ -48,7 +48,7 @@ myUI = {
 
 			startBtns.className = "startBtns";
 			startBtns.innerHTML = stBtnName[i];
-			startBtns.onclick = myUI.stBtnFunc(i,startMenu,myScreen);
+			startBtns.onclick = myUI.stBtnFunc(i,startMenu,myScreen,bbb);
 			myUI.startBtnSensor(startBtns,i,bbb);
 
 			startMenu.append(startBtns);
@@ -87,7 +87,7 @@ myUI = {
 			
 		}
 	},
-	stBtnFunc: function(i,startMenu,myScreen){
+	stBtnFunc: function(i,startMenu,myScreen,bbb){
 		return function(){
 			
 			takeFull(startMenu);
@@ -98,27 +98,27 @@ myUI = {
 			
 			if(i === 0){
 				thingy = "NEW GAME";
-				items.onload = newGameProgram.page(container,items);
+				items.onload = newGameProgram.page(container,items,bbb);
 			}
 
 			if(i === 1){
 				thingy = "LOAD GAME";
-				items.onload = loader.page(container,items);
+				items.onload = loader.page(container,items,bbb);
 			}
 
 			if(i === 2){
 				thingy = "SETTINGS";
-				items.onload = settings.page(container,items);
+				items.onload = settings.page(container,items,bbb);
 			}
 
 			if(i === 3){
 				thingy = "CREDITS";
-				items.onload = credits.page(container,items);
+				items.onload = credits.page(container,items,bbb);
 			}
 
 			pauseBtn.className = "pauseBtn";
 			pauseBtn.innerHTML = "⚙";
-			pauseBtn.onclick = myUI.pauseBtnFunc(startMenu,myScreen);
+			pauseBtn.onclick = myUI.pauseBtnFunc(startMenu,myScreen,bbb);
 
 			title.className = "title";
 			title.innerHTML = thingy;
