@@ -3,6 +3,6 @@ var game = {
 		bbb.loopBool = true;
 		bbb.activeFile = bbb.loadFiles[i].key;
 		saveLS("bGAuser", bbb);
-		//console.log(bbb.loadFiles[i].key);
+		console.log(bbb.loadFiles[i].key);
 	}
 }

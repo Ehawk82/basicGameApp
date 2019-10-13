@@ -196,6 +196,14 @@ select {
 .ngBtn {
 
 }
+.xOutBtn {
+	position: fixed;
+	top:0;
+	right:5vw;
+	width: 5vw;
+	height: 5vw;
+
+}
 /*ID*/
 
 /*MULTIS*/
