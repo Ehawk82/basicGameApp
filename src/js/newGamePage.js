@@ -1,8 +1,8 @@
-var charOptions = ["CHARACTER","TYPE 1","TYPE 2","TYPE 3"];
-var regOptions = ["REGION","AREA 1","AREA 2","AREA 3","AREA 4","AREA 5"];
-var elemOptions = ["ELEMENT","ELEM 2","ELEM 3", "ELEM 4"];
+var charOptions = ["TYPE 1","TYPE 2","TYPE 3"];
+var regOptions = ["AREA 1","AREA 2","AREA 3","AREA 4","AREA 5"];
+var elemOptions = ["ELEM 2","ELEM 3", "ELEM 4"];
 var newGameProgram = {
-	page: function(container,items){
+	page: function(container,items,bbb){
 		var newGameContainer = createEle("div"),
 			form = createEle("div"),
 			nameIn = createEle("input"),
@@ -92,7 +92,9 @@ var newGameProgram = {
 			
 			items.remove();
 
-			game.init(bbb,nameIn.value);
+			var i = +(bbb.fileLookup - 1);
+
+			game.init(bbb,nameIn.value,i);
 		}
 	}
 };

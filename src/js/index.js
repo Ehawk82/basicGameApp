@@ -7,6 +7,7 @@ console.log(ts);
 */
 bgauser = {
 	gBool: false,
+	activeFile: "",
 	loadFiles: [],
 	fileLookup: 0,
 	userString: "",
@@ -41,6 +42,8 @@ myUI = {
 		    startPage = createEle("div"),
 		    myScreen = createEle("div");
 
+
+
 		startMenu.className = "startMenu";
 
 		for (var i = 0; i < stBtnName.length; i++) {
@@ -66,9 +69,10 @@ myUI = {
 
 		setTimeout(function(){
 			makeFull(startMenu);
-		},666);
+		},100);
 	},
 	startBtnSensor: function(startBtns,i,bbb){
+
 		if(i === 0){
 
 		}
@@ -118,7 +122,7 @@ myUI = {
 
 			pauseBtn.className = "pauseBtn";
 			pauseBtn.innerHTML = "⚙";
-			pauseBtn.onclick = myUI.pauseBtnFunc(startMenu,myScreen,bbb);
+			pauseBtn.onclick = myUI.pauseBtnFunc(startMenu,myScreen);
 
 			title.className = "title";
 			title.innerHTML = thingy;
@@ -130,11 +134,15 @@ myUI = {
 
 			setTimeout(function(){
 				makeFull(myScreen);
-			},666);
+			},333);
 		}
 	},
 	pauseBtnFunc: function(startMenu,myScreen){
 		return function(){
+			var bbb = parseLS("bGAuser");
+			if(bbb.loopBool === true){
+				console.log(bbb.activeFile);
+			}
 			makeFull(startMenu);
 			takeFull(myScreen);
 			myScreen.innerHTML = "";

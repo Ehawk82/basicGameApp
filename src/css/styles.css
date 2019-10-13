@@ -1,6 +1,7 @@
 /*DOM*/
 html {
 	font-family: "Helvetica";
+	font-weight: 900;
 }
 body {
 	height:100vh;
@@ -15,25 +16,22 @@ h1 {
 	padding: 0;
 }
 button {
-	background-color: #8C8474;
+	background-color: #192DA1;
 	border:none;
 	outline: none;
-	color:#F2D5BB;
+	color:white;
 }
 button:active {
-	background-color: #7C7464;
-	color: #E2C5AB;
+	background-color: #070C2B;
 }
 button:hover {
-	background-color: #B0A692;
-	color: #F2E1BB;
+	background-color: #2039CC;
 }
 button:disabled {
-	background-color: #615B4E;
-	color: #453C34;
+	opacity: 0.5;
 }
 ::selection {
-  background: #ffb7b7;
+  background: #1D35B8;
 }
 input[type=text] {
 	text-indent: 5px;
@@ -41,7 +39,7 @@ input[type=text] {
 input[type=text], textarea, select {
   -webkit-transition: all 0.30s ease-in-out;
   outline: none;
-  border: 2px solid #ffb7b7;
+  border: 2px solid #2039CC;
   line-height: 30px;
 }
 select {
@@ -57,22 +55,24 @@ select {
 }
 .startPage {
 	height: auto;
-	width: 20vw;
+	width: 50vw;
 	margin: 10vh auto;
 
 }
 .startBtns {
 	display: -webkit-box;
-	margin:10px 0;
+	width: -webkit-fill-available;
+	margin: 3vh 0;
+	padding: 3vh 0;
 }
 
 .startMenu_full {
-	width: fit-content;
+	width: 40vw;
     margin: 20vh auto 0 auto;
     padding: 10px 0;
 }
 .startMenu {
-	width: fit-content;
+	width: 40vw;
     margin: -100vh auto 0 auto;
     padding: 10px 0;
 }
@@ -123,12 +123,19 @@ select {
 	background-color: black;
 	width:max-content;
 	margin: 10px auto;
-	border-bottom: 1px solid #F2D5BB;
 }
-.cStuff {
+.cStuff, .lsStuff {
 	width:50vw;
 	margin:0 auto;
 	display: grid;
+}
+.lsClr {
+	width:50%;
+	margin: 0 auto;
+	padding: 4px 0;
+}
+.lsClr:hover {
+	background-color: red;
 }
 .labels {
 	margin-top: 3vh;
@@ -144,8 +151,8 @@ select {
 }
 .form {
 	width: -webkit-fill-available;
-	height: 70vh;
-	margin:5vh 20vw;
+	height: auto;
+	margin:15vh 20vw;
 	display: -webkit-box;
 	background-color: white;
 	padding: 5vh 0;
@@ -161,28 +168,33 @@ select {
 .fItems {
 	display: -webkit-inline-box;
     width: -webkit-fill-available;
-    margin: 10px 20vw;
+    margin: 20px 10vw;
 }
 .container {
 	display: block;
 }
 .container div div {
-	padding: 3px;
 }
 .loadBox div {
 	display: inline-block;
-	width:150px;
-	height:150px;
+	width:120px;
+	height:120px;
+	line-height:40px;
 	margin-right: 5px;
 	margin-bottom: 5px;
-	padding: 5px;
+	padding:0;
 	cursor: pointer;
-	background-color: #8C8474;
-	color:#F2D5BB;
+	background-color:  #192DA1;
+	color:white;
+}
+.loadBox div span {
+	margin-left: 10px;
 }
 .loadBox div:hover {
-	background-color: #B0A692;
-	color: #F2E1BB;
+	background-color: #2039CC;
+}
+.ngBtn {
+
 }
 /*ID*/
 
@@ -197,15 +209,15 @@ html, body {
 .cStuff,.devLog p,.pauseBtn{
 	text-align: center;
 }
-.startBtns, .pauseBtn {
+.startBtns, .pauseBtn, {
 	font-size:3vh;
 }
 html,h1,button,p,div{
 	font-weight: 300;
 }
 .myScreen, .myScreen_full,.startPage {
-	background-color: #383C3D;
-	color:#F2D5BB;
+	background-color: #070C2B;
+	color:white;
 }
 
 .startBtns {
@@ -220,7 +232,7 @@ html,h1,button,p,div{
 	transition: 666ms all;
 }
 .devLog, .settContainer, .loadContainer, .newGameContainer {
-	box-shadow: 0 0 1px inset gold,0 0 1px inset gold,0 0 2px inset silver,0 0 3px inset white,0 0 3px inset white;
+	
 }
 
 /*KEYFRAMES*/
@@ -231,11 +243,6 @@ html,h1,button,p,div{
 /*DOM*/
 
 /*CLASS*/
-.startBtns {
-
-	width:18vw;
-
-}
 
 /*ID*/
 
@@ -250,11 +257,6 @@ html,h1,button,p,div{
 /*DOM*/
 
 /*CLASS*/
-.startBtns {
-
-	width:17vw;
-
-}
 
 /*ID*/
 
@@ -269,11 +271,7 @@ html,h1,button,p,div{
 /*DOM*/
 
 /*CLASS*/
-.startBtns {
 
-	width:17vw;
-
-}
 /*ID*/
 
 /*MULTIS*/
@@ -286,11 +284,7 @@ html,h1,button,p,div{
 /*DOM*/
 
 /*CLASS*/
-.startBtns {
 
-	width:16vw;
-
-}
 /*ID*/
 
 /*MULTIS*/
@@ -303,11 +297,7 @@ html,h1,button,p,div{
 /*DOM*/
 
 /*CLASS*/
-.startBtns {
 
-	width:15vw;
-
-}
 /*ID*/
 
 /*MULTIS*/
