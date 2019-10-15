@@ -42,8 +42,6 @@ myUI = {
 		    startPage = createEle("div"),
 		    myScreen = createEle("div");
 
-		bbb.loopBool = false;
-
 		startMenu.className = "startMenu";
 
 		for (var i = 0; i < stBtnName.length; i++) {
@@ -66,8 +64,6 @@ myUI = {
 		dvContain.append(startPage,myScreen);
 
 		body.append(dvContain);
-
-		saveLS("bGAuser", bbb);
 
 		setTimeout(function(){
 			makeFull(startMenu);
@@ -143,37 +139,11 @@ myUI = {
 		return function(){
 			var bbb = parseLS("bGAuser");
 			if(bbb.loopBool === true){
-				var xOutBtn = createEle("button");
-
-				xOutBtn.innerHTML = "X";
-				xOutBtn.className = "xOutBtn";
-				xOutBtn.onclick = myUI.xOutFunc(bbb,startMenu,myScreen);
-
-				startMenu.append(xOutBtn);
+				//console.log(bbb.activeFile);
 			}
-
 			makeFull(startMenu);
 			takeFull(myScreen);
-
-			//myScreen.innerHTML = "";
-		}
-	},
-	xOutFunc: function(bbb,startMenu,myScreen){
-		return function(){
-			var k = bbb.activeFile,
-				j = k.split("gf"),
-				h = j[1], nameIn = bbb.loadFiles[h].name;
-
-			takeFull(startMenu);
-			makeFull(myScreen);
-
-			myScreen.onload = function(bbb,nameIn,h) {
-				return function(){
-					game.init(bbb,nameIn,h);
-				}
-				
-			}
-			
+			myScreen.innerHTML = "";
 		}
 	}
 };

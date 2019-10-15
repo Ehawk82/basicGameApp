@@ -1,7 +1,7 @@
 /*DOM*/
 html {
-	font-family: "Helvetica";
-	font-weight: 900;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
 }
 body {
 	height:100vh;
@@ -16,18 +16,19 @@ h1 {
 	padding: 0;
 }
 button {
-	background-color: #192DA1;
+	background-color: #20203B;
 	border:none;
 	outline: none;
 	color:white;
 }
 button:active {
-	background-color: #070C2B;
+	background-color: #10102B;
 }
 button:hover {
-	background-color: #2039CC;
+	background-color: #10102B;
 }
 button:disabled {
+	background-color: #10102B;
 	opacity: 0.5;
 }
 ::selection {
@@ -45,9 +46,97 @@ input[type=text], textarea, select {
 select {
 	padding: 5px 0;
 }
+input[type=range] {
+  height: 18px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  padding: 0 1px;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #B0B0B0;
+  border-radius: 1px;
+  border: 1px solid #10102B;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #212121;
+  border: 0px solid #757575;
+  height: 15px;
+  width: 20px;
+  border-radius: 2px;
+  background: #10102B;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #B0B0B0;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #B0B0B0;
+  border-radius: 1px;
+  border: 1px solid #10102B;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #212121;
+  border: 0px solid #757575;
+  height: 15px;
+  width: 20px;
+  border-radius: 2px;
+  background: #10102B;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #B0B0B0;
+  border: 1px solid #10102B;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #B0B0B0;
+  border: 1px solid #10102B;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #212121;
+  border: 0px solid #757575;
+  height: 15px;
+  width: 20px;
+  border-radius: 2px;
+  background: #10102B;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #B0B0B0;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #B0B0B0;
+}
 /*CLASS*/
 .dvContain {
-	background-color: #0D0D0D;
+	background-color: #10102B;
 	height: inherit;
 	width: inherit;
 	display: flow-root;
@@ -98,8 +187,8 @@ select {
 }
 .pauseBtn {
 	position: absolute;
-	top:0;
-	right:0;
+	top:1px;
+	right:1px;
 	height: 5.5vh;
 	width: 6vh;
 }
@@ -129,13 +218,22 @@ select {
 	margin:0 auto;
 	display: grid;
 }
-.lsClr {
+.lsClr, .fsToggle {
 	width:50%;
-	margin: 0 auto;
-	padding: 4px 0;
+	margin: 5px auto;
+	padding: 8px 0;
 }
 .lsClr:hover {
-	background-color: red;
+	background-color: #7D0400;
+}
+.lsStuff span {
+	width:-webkit-fill-available;
+	vertical-align: middle;
+}
+.lsStuff input[type="checkbox"] {
+	width: fit-content;
+	vertical-align: middle;
+  position: relative;
 }
 .labels {
 	margin-top: 3vh;
@@ -180,18 +278,17 @@ select {
 	width:120px;
 	height:120px;
 	line-height:40px;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	margin: 5px;
 	padding:0;
 	cursor: pointer;
-	background-color:  #192DA1;
+	background-color:  #20203B;
 	color:white;
 }
 .loadBox div span {
 	margin-left: 10px;
 }
 .loadBox div:hover {
-	background-color: #2039CC;
+	background-color: #10102B;
 }
 .ngBtn {
 
@@ -240,9 +337,14 @@ html,h1,button,p,div{
 	transition: 666ms all;
 }
 .devLog, .settContainer, .loadContainer, .newGameContainer {
-	
+	margin-top: 2px;
 }
-
+.lsStuff input[type="checkbox"], .lsStuff span {
+	display: inline-block;
+}
+.startPage,button,.loadBox div {
+	box-shadow: 0 0 .5px silver;
+}
 /*KEYFRAMES*/
 
 /*MEDIA QUERIES*/

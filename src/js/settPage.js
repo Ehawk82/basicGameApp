@@ -6,17 +6,31 @@ var settings = {
 			sStuff = createEle("div"),
 			lsLabel = createEle("p"),
 			lsStuff = createEle("div"),
-			lsClr = createEle("button");
+			lsClr = createEle("button"),
+			fsToggle = createEle("button"),
+			chtLabel = createEle("span"),
+			cheatsToggle = createEle("input");
 
-		lsLabel.innerHTML = "DATA";
+		lsLabel.innerHTML = "APPLICATION";
 		lsLabel.className = "lsLabel";
-
-		lsStuff.className = "lsStuff";
-		lsStuff.append(lsClr);
 
 		lsClr.innerHTML = "CLEAR DATA";
 		lsClr.className = "lsClr";
 		lsClr.onclick = settings.clearLS();
+
+		fsToggle.innerHTML = "FULL SCREEN MODE";
+		fsToggle.className = "fsToggle";
+		fsToggle.onclick = openFullscreen();
+
+		chtLabel.innerHTML = "CHEATS ";
+		chtLabel.append(cheatsToggle);
+
+		cheatsToggle.type = "checkbox";
+		cheatsToggle.checked = bbb.cheats;
+		cheatsToggle.onclick = settings.cheatFunc(cheatsToggle,bbb);
+
+		lsStuff.className = "lsStuff";
+		lsStuff.append(lsClr,fsToggle,chtLabel);
 
 		for (var i = 0; i < 3; i++) {
 			var rngs = createEle("input"),
@@ -31,7 +45,7 @@ var settings = {
 			rngs.type = "range";
 			rngs.max = 1;
 			rngs.min = 0;
-			rngs.step = .1;
+			rngs.step = .001;
 			if (i === 0) {
 				pingName = bbb.appVolume;
 				rngs.value = pingName;
@@ -57,6 +71,17 @@ var settings = {
 		settContainer.append(sLabel,sStuff,lsLabel,lsStuff);
 
 		items.append(settContainer);
+	},
+	cheatFunc: function(cheatsToggle,bbb) {
+		return function(){
+			var ccc = cheatsToggle.checked;
+			if(ccc === true){
+				bbb.cheats = true;
+			} else {
+				bbb.cheats = false;
+			}
+			saveLS("bGAuser", bbb);
+		}
 	},
 	clearLS: function(){
 		return function(){
