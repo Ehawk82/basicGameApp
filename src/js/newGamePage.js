@@ -44,7 +44,8 @@ var newGameProgram = {
 		nameIn.type = "text";
 		nameIn.className = "fItems";
 		nameIn.placeholder = "NAME";
-		nameIn.onkeyup = newGameProgram.validateName(ngBtn);
+		nameIn.maxLength = 8;
+		nameIn.onkeyup = newGameProgram.validateName(ngBtn,nameIn);
 
 		ngBtn.className = "ngBtn";
 		ngBtn.innerHTML = "✔";
@@ -59,9 +60,16 @@ var newGameProgram = {
 
 		items.append(newGameContainer);
 	},
-	validateName: function(ngBtn){
+	validateName: function(ngBtn,nameIn){
 		return function(){
-			ngBtn.disabled = false;
+			var x = nameIn.value,
+				y = x.trim();
+			
+			if(y === ""){
+				ngBtn.disabled = true;
+			}else{
+				ngBtn.disabled = false;
+			}
 		}
 	},
 	submitForm: function(nameIn,charType,regType,elemType,ngBtn){

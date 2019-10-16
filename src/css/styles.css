@@ -9,6 +9,12 @@ body {
 	overflow: hidden;
 
 }
+a {
+	color:white;
+}
+a:visited {
+	color:white;
+}
 h1 {
 	display: -webkit-inline-box;
 	width: 100vw;
@@ -22,9 +28,11 @@ button {
 	color:white;
 }
 button:active {
+	color:grey;
 	background-color: #10102B;
 }
 button:hover {
+	color:grey;
 	background-color: #10102B;
 }
 button:disabled {
@@ -165,7 +173,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin: -100vh auto 0 auto;
     padding: 10px 0;
 }
-.myScreen {
+.myScreen, .controlPage,.gFile {
 	position: absolute;
     top:-100vh;
     left:0;
@@ -173,13 +181,19 @@ input[type=range]:focus::-ms-fill-upper {
 	height: inherit;
 	width: inherit;
 }
-.myScreen_full {
+.myScreen_full, .controlPage_full,.gFile_full,.progressPage {
 	position: absolute;
     top:0;
     left:0;
 	display: -webkit-box;
 	height: inherit;
 	width: inherit;
+}
+.controlPage_full,.controlPage {
+	background-image: url("../assets/controls.png");
+	background-position: center;
+	background-repeat: no-repeat;
+
 }
 .title {
 	height: 5.5vh;
@@ -201,7 +215,7 @@ input[type=range]:focus::-ms-fill-upper {
     top: 5.5vh;
 
 }
-.devLog, .settContainer, .loadContainer, .newGameContainer {
+.devLog, .settContainer, .loadContainer, .newGameContainer,.gFile,.gFile_full {
 	background-color: black;
 	display: block;
 	height:-webkit-fill-available;
@@ -229,6 +243,7 @@ input[type=range]:focus::-ms-fill-upper {
 .lsStuff span {
 	width:-webkit-fill-available;
 	vertical-align: middle;
+	padding: 8px;
 }
 .lsStuff input[type="checkbox"] {
 	width: fit-content;
@@ -277,15 +292,16 @@ input[type=range]:focus::-ms-fill-upper {
 	display: inline-block;
 	width:120px;
 	height:120px;
-	line-height:40px;
+	line-height: 120px;
 	margin: 5px;
 	padding:0;
 	cursor: pointer;
 	background-color:  #20203B;
 	color:white;
+	text-align: center;
+	overflow: hidden;
 }
 .loadBox div span {
-	margin-left: 10px;
 }
 .loadBox div:hover {
 	background-color: #10102B;
@@ -300,6 +316,35 @@ input[type=range]:focus::-ms-fill-upper {
 	width: 5vw;
 	height: 5vw;
 
+}
+.controlsLabel {
+	cursor: pointer;
+	background-color: #20203B;
+	margin:8px 0;
+	padding: 8px;
+	width: fit-content;
+}
+.cpyRghtHolder {
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+}
+.progressPage {
+	background-color: rgba(0,0,0,0.7);
+}
+.progressBar {
+	background-color: rgba(10,10,25,1);
+	height: 20px;
+	width:20vw;
+	margin-top: 20vh;
+	margin-left: 40vw;
+	display: block;
+
+}
+.myBar {
+	background-color: rgba(40,40,80,.8);
+	height: 20px;
+	display: block;
 }
 /*ID*/
 
@@ -320,7 +365,7 @@ html, body {
 html,h1,button,p,div{
 	font-weight: 300;
 }
-.myScreen, .myScreen_full,.startPage {
+.myScreen, .myScreen_full,.startPage,.controlPage,.controlPage_full {
 	background-color: #070C2B;
 	color:white;
 }
@@ -333,18 +378,25 @@ html,h1,button,p,div{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
 }
-.startMenu,.startMenu_full,.myScreen_full,.myScreen {
-	transition: 666ms all;
+.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full {
+	transition: 333ms all ease-in-out;
 }
+
+.mybar {
+	transition: 50ms all ease-in-out;
+}
+
 .devLog, .settContainer, .loadContainer, .newGameContainer {
 	margin-top: 2px;
 }
 .lsStuff input[type="checkbox"], .lsStuff span {
 	display: inline-block;
 }
-.startPage,button,.loadBox div {
-	box-shadow: 0 0 .5px silver;
+.startPage,button,.loadBox div,.controlsLabel,.devLog, .settContainer, .loadContainer, .newGameContainer,.gFile,.gFile_full,.progressBar {
+	box-shadow: 0 0 .25px black,0 0 .5px darkgrey,0 0 .75px grey,0 0 1px lightgrey;
+	border-radius: 1px;
 }
+
 /*KEYFRAMES*/
 
 /*MEDIA QUERIES*/

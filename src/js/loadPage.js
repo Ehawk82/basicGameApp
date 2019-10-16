@@ -6,7 +6,7 @@ var loader = {
 
 		var loadObjects = [bbb.loadFiles].forEach(function(element) {
 			for (var i = 0; i < element.length; i++) {
-				loadBox.innerHTML += "<div class='gTabs'><span>NAME: " + element[i].name + "</span><br/><span>CHAR: " + element[i].cType + "</span><br /><span>REGION: " + element[i].rType + "</span><br/></div>";
+				loadBox.innerHTML += "<div class='gTabs'><span>" + element[i].name + "</span></div>";
 				nameIn = element[i].name;
 			}	
 		});

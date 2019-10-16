@@ -7,7 +7,6 @@ console.log(ts);
 */
 bgauser = {
 	gBool: false,
-	activeFile: "",
 	loadFiles: [],
 	fileLookup: 0,
 	userString: "",

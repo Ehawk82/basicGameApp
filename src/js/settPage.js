@@ -9,6 +9,7 @@ var settings = {
 			lsClr = createEle("button"),
 			fsToggle = createEle("button"),
 			chtLabel = createEle("span"),
+			controlsLabel = createEle("div"),
 			cheatsToggle = createEle("input");
 
 		lsLabel.innerHTML = "APPLICATION";
@@ -29,8 +30,12 @@ var settings = {
 		cheatsToggle.checked = bbb.cheats;
 		cheatsToggle.onclick = settings.cheatFunc(cheatsToggle,bbb);
 
+		controlsLabel.innerHTML = "CONTROLS";
+		controlsLabel.className = "controlsLabel";
+		controlsLabel.onclick = settings.controlsFunc(controlsLabel,settContainer);
+
 		lsStuff.className = "lsStuff";
-		lsStuff.append(lsClr,fsToggle,chtLabel);
+		lsStuff.append(lsClr,fsToggle,chtLabel,controlsLabel);
 
 		for (var i = 0; i < 3; i++) {
 			var rngs = createEle("input"),
@@ -71,6 +76,22 @@ var settings = {
 		settContainer.append(sLabel,sStuff,lsLabel,lsStuff);
 
 		items.append(settContainer);
+	},
+	controlsFunc: function(controlsLabel,settContainer){
+		return function(){
+			controlsLabel.onclick = null;
+			var controlPage = createEle("div");
+
+			controlPage.innerHTML = "&nbsp;";
+			controlPage.className = "controlPage";
+
+			settContainer.append(controlPage);
+
+			setTimeout(function(){
+				makeFull(controlPage);
+			},1);
+
+		}
 	},
 	cheatFunc: function(cheatsToggle,bbb) {
 		return function(){
