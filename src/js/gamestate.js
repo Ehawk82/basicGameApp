@@ -1,14 +1,35 @@
 var game = {
 	init: function(bbb,x,i){
 		var container = bySel(".container"),
-			gFile = createEle("div");
+			gFile = createEle("div"),
+			myScreen = bySel(".myScreen_full");
 		var bbb = parseLS("bGAuser");
 
 		var progressBar = createEle("div"),
 			progressPage = createEle("div"),
-			myBar = createEle("div");
+			myBar = createEle("div"),
+			gameFrame = createEle("div"),
+			gameNav = createEle("div"),
+			gameNav1 = createEle("div"),
+			navToggle = createEle("button"),
+			gameConsole = createEle("div");
 
+		console.log(bbb.loadFiles[i].name);
+		gameConsole.innerHTML = bbb.loadFiles[i].name;
+		gameConsole.className = "gameConsole";
 
+		navToggle.innerHTML = "↔️";
+		navToggle.className = "navToggle";
+		navToggle.onclick = game.tgglNav(gameNav,gameNav1);
+		
+		gameNav.className = "gameNav_full";
+		gameNav.innerHTML = "menu 1";
+
+		gameNav1.className = "gameNav";
+		gameNav1.innerHTML = "menu 2";
+
+		gameFrame.className = "gameFrame";
+		gameFrame.append(gameNav,gameNav1,gameConsole);
 
 		myBar.className = "myBar";
 		myBar.innerHTML = "&nbsp;";
@@ -21,42 +42,59 @@ var game = {
 		progressPage.append(progressBar);
 
 		bbb.loopBool = true;
-		bbb.activeFile = bbb.loadFiles[i].key;
 		saveLS("bGAuser", bbb);
 
-		gFile.innerHTML = bbb.loadFiles[i].name;
 		gFile.className = "gFile";
-		gFile.append(progressPage);
-
-		container.append(gFile);
+		gFile.append(gameFrame,progressPage);
 
 		setTimeout(function(){
-			makeFull(gFile);
+			
+			container.append(gFile);
 			game.loader(progressPage,myBar,gFile);
-		},100);
+			setTimeout(function(){
+				makeFull(gFile);
+				myScreen.append(navToggle);
+			},666);
+		},50);
+	},
+	tgglNav: function(gameNav,gameNav1) {
+		return function(){
+			if (gameNav.className === "gameNav") {
+				makeFull(gameNav);
+				takeFull(gameNav1);
+			} else {
+				takeFull(gameNav);
+				makeFull(gameNav1);
+			}
+		}
 	},
 	loader: function(progressPage,myBar,gFile) {
 		setTimeout(function(){
+			makeFull(progressPage);
 			gFile.onload = game.counter(progressPage,myBar);
-		},666);
+		},1);
 	},
 	counter: function(progressPage,myBar){
 		var i = 0;
-
-		if (i == 0) {
-		    i = 1;
-		    var width = 1;
-		    var id = setInterval(frame, 50);
-		    function frame() {
-		      if (width >= 100) {
-		        clearInterval(id);
-		        i = 0;
-		        progressPage.remove();
-		      } else {
-		        width++;
-		        myBar.style.width = width + "%";
-		      }
-		    }
-  		}
+		setTimeout(function(){
+			if (i == 0) {
+			    i = 1;
+			    var width = 1;
+			    var id = setInterval(frame, 1);
+			    function frame() {
+			      if (width >= 100) {
+			        clearInterval(id);
+			        i = 0;
+			        takeFull(progressPage);
+			        setTimeout(function(){
+			        	progressPage.remove();
+			        },1000);
+			      } else {
+			        width = width + .1;
+			        myBar.style.width = width + "%";
+			      }
+			    }
+	  		}
+  		},333);
 	}
 }
