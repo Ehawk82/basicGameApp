@@ -14,8 +14,8 @@ var game = {
 			navToggle = createEle("button"),
 			gameConsole = createEle("div");
 
-		console.log(bbb.loadFiles[i].name);
-		gameConsole.innerHTML = bbb.loadFiles[i].name;
+		//console.log(bbb.loadFiles[i].name);
+		gameConsole.onload = gameStuffs.assets(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
 		gameConsole.className = "gameConsole";
 
 		navToggle.innerHTML = "↔️";
@@ -23,7 +23,7 @@ var game = {
 		navToggle.onclick = game.tgglNav(gameNav,gameNav1);
 		
 		gameNav.className = "gameNav_full";
-		gameNav.innerHTML = "menu 1";
+		gameNav.onload = gameStuffs.navAssets(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
 
 		gameNav1.className = "gameNav";
 		gameNav1.innerHTML = "menu 2";

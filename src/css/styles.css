@@ -28,12 +28,10 @@ button {
 	color:white;
 }
 button:active {
-	color:grey;
 	background-color: #10102B;
 }
 button:hover {
-	color:grey;
-	background-color: #10102B;
+	background-color: #30304B;
 }
 button:disabled {
 	background-color: #10102B;
@@ -198,6 +196,7 @@ input[type=range]:focus::-ms-fill-upper {
 .title {
 	height: 5.5vh;
 	font-size:5vh;
+	cursor: default;
 }
 .pauseBtn {
 	position: absolute;
@@ -226,6 +225,7 @@ input[type=range]:focus::-ms-fill-upper {
 	background-color: black;
 	width:max-content;
 	margin: 10px auto;
+	cursor: default;
 }
 .cStuff, .lsStuff {
 	width:50vw;
@@ -244,11 +244,13 @@ input[type=range]:focus::-ms-fill-upper {
 	width:-webkit-fill-available;
 	vertical-align: middle;
 	padding: 8px;
+	cursor: default;
 }
 .lsStuff input[type="checkbox"] {
 	width: fit-content;
 	vertical-align: middle;
-  position: relative;
+  	position: relative;
+
 }
 .labels {
 	margin-top: 3vh;
@@ -328,6 +330,7 @@ input[type=range]:focus::-ms-fill-upper {
 	position: absolute;
 	bottom: 0;
 	margin: 0;
+	cursor: default;
 }
 .progressPage {
 	background-color: rgba(0,0,0,1);
@@ -338,7 +341,6 @@ input[type=range]:focus::-ms-fill-upper {
 	left:0;
 	z-index: 20;
 }
-
 
 .progressPage_full {
 	background-color: rgba(0,0,0,1);
@@ -367,24 +369,25 @@ input[type=range]:focus::-ms-fill-upper {
 
 }
 .gameNav {
-	background-color: grey;
 	position: absolute;
 	display: block;
 	width: 10vw;
 	top:0;
 	left: -10vw;
 	height: -webkit-fill-available;
-	box-shadow: 0 0 15px black inset;
+	display: flex;
+    flex-direction: column;
 }
 .gameNav_full {
-	background-color: grey;
 	position: absolute;
 	display: block;
 	left: 0vw;
 	top:0;
 	width: 10vw;
 	height: -webkit-fill-available;
-	box-shadow: 0 0 15px black inset;
+	display: flex;
+    flex-direction: column;
+	
 }
 .gameFrame {
 	background-color: black;
@@ -392,7 +395,7 @@ input[type=range]:focus::-ms-fill-upper {
 	height: -webkit-fill-available;
 }
 .navToggle {
-	height: 5vh;
+	height: 5.5vh;
 	width: 10vw;
 	position: absolute;
 	top: 0;
@@ -406,8 +409,27 @@ input[type=range]:focus::-ms-fill-upper {
 	width: 90vw;
 	left: 10vw;
 	background-color: black;
-	padding: 10px;
-
+}
+.nameholder {
+	width: -webkit-fill-available;
+	display: flex;
+}
+.nameIn, .cTypeHolder, .rTypeHolder,.eTypeHolder {
+	width:-webkit-fill-available;
+	text-align: center;
+	display: grid;
+	margin: 0;
+	padding: 8px 0;
+	background-color: #070C2B;
+	font-size: 10px;
+	cursor: default;
+	box-shadow: 0 0 1px white inset;
+}
+.navBtns {
+	height: -webkit-fill-available;
+	width: -webkit-fill-available;
+	margin: 2px 2px 0 2px;
+	padding: 4px 0;
 }
 /*ID*/
 
@@ -428,7 +450,7 @@ html, body {
 html,h1,button,p,div{
 	font-weight: 300;
 }
-.myScreen, .myScreen_full,.startPage,.controlPage,.controlPage_full {
+.myScreen, .myScreen_full,.startPage,.controlPage,.controlPage_full,.gameNav_full,.gameNav {
 	background-color: #070C2B;
 	color:white;
 }
@@ -452,7 +474,6 @@ html,h1,button,p,div{
 	display: inline-block;
 }
 .startPage,button,.loadBox div,.controlsLabel,.devLog, .settContainer, .loadContainer, .newGameContainer,.gFile,.gFile_full {
-	box-shadow: 0 0 1px rgba(70,70,120,1),0 0 1px rgba(70,70,120,1),0 0 2px rgba(70,70,120,1),0 0 2px rgba(70,70,120,1);
 	border-radius: 1px;
 }
 
