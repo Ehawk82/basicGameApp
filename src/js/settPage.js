@@ -15,7 +15,7 @@ var settings = {
 		lsLabel.innerHTML = "APPLICATION";
 		lsLabel.className = "lsLabel";
 
-		lsClr.innerHTML = "CLEAR DATA";
+		lsClr.innerHTML = "CLEAR ALL DATA";
 		lsClr.className = "lsClr";
 		lsClr.onclick = settings.clearLS();
 

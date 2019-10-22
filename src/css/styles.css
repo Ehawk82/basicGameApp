@@ -323,7 +323,7 @@ input[type=range]:focus::-ms-fill-upper {
 	cursor: pointer;
 	background-color: #20203B;
 	margin:8px 0;
-	padding: 8px;
+	padding: 8px 16px;
 	width: fit-content;
 }
 .cpyRghtHolder {
@@ -431,6 +431,13 @@ input[type=range]:focus::-ms-fill-upper {
 	margin: 2px 2px 0 2px;
 	padding: 4px 0;
 }
+.gTabs {
+	position: relative;
+	z-index: 3;
+
+}
+
+
 /*ID*/
 
 /*MULTIS*/

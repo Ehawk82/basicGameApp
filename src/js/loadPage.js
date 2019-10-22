@@ -6,7 +6,7 @@ var loader = {
 
 		var loadObjects = [bbb.loadFiles].forEach(function(element) {
 			for (var i = 0; i < element.length; i++) {
-				loadBox.innerHTML += "<div class='gTabs'><span>" + element[i].name + "</span></div>";
+				loadBox.innerHTML += "<div class='gTabs' data-index='" + i + "'><span>" + element[i].name + "</span></div>";
 				nameIn = element[i].name;
 			}	
 		});
@@ -21,6 +21,7 @@ var loader = {
 			var gTabs = bySelAll(".gTabs");
 			for(var i = 0; i < gTabs.length; i++) {
 				gTabs[i].addEventListener("click", loader.gTabClicked(bbb,nameIn,i), false);
+				
 			}
 		},100);
 	},

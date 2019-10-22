@@ -26,7 +26,7 @@ var game = {
 		gameNav.onload = gameStuffs.navAssets(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
 
 		gameNav1.className = "gameNav";
-		gameNav1.innerHTML = "menu 2";
+		gameNav1.onload = gameStuffs.navAssets1(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
 
 		gameFrame.className = "gameFrame";
 		gameFrame.append(gameNav,gameNav1,gameConsole);

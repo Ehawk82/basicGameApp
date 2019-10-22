@@ -5,6 +5,7 @@ rTypeName = ["REGION 1","REGION 2","REGION 3","REGION 4","REGION 5"];
 eTypeName = ["ELEMENT 1","ELEMENT 2","ELEMENT 3"];
 
 var navAss = ["📌","🔧","🧪","➕","🔒","🔒","🔒","🔒"];
+var navAss1 = ["🔒","🔒","🔒","🔒","🔒","🔒","🔒","🔒"];
 
 gameStuffs = {
 	assets: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
@@ -69,6 +70,42 @@ gameStuffs = {
 
 
 			gameNav.append(navBtns);
+		}
+	},
+	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
+		for (var i = 0; i < navAss1.length; i++) {
+			var navBtns1 = createEle("button");
+
+			navBtns1.className = "navBtns";
+			navBtns1.innerHTML = navAss1[i];
+
+			if(i === 0){
+				navBtns1.disabled = true;
+			}
+			if(i === 1){
+				navBtns1.disabled = true;
+			}
+			if(i === 2){
+				navBtns1.disabled = true;
+			}
+			if(i === 3){
+				navBtns1.disabled = true;
+			}
+			if(i === 4){
+				navBtns1.disabled = true;
+			}
+			if(i === 5){
+				navBtns1.disabled = true;
+			}
+			if(i === 6){
+				navBtns1.disabled = true;
+			}
+			if(i === 7){
+				navBtns1.disabled = true;
+			}
+
+
+			gameNav1.append(navBtns1);
 		}
 	}
 };
