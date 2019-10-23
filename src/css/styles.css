@@ -46,7 +46,7 @@ input[type=text] {
 input[type=text], textarea, select {
   -webkit-transition: all 0.30s ease-in-out;
   outline: none;
-  border: 2px solid #2039CC;
+  border: 1px solid #2039CC;
   line-height: 30px;
 }
 select {
@@ -171,7 +171,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin: -100vh auto 0 auto;
     padding: 10px 0;
 }
-.myScreen, .controlPage,.gFile {
+.myScreen, .controlPage,.gFile,.saveGamesPage,.gameFilePage {
 	position: absolute;
     top:-100vh;
     left:0;
@@ -179,7 +179,7 @@ input[type=range]:focus::-ms-fill-upper {
 	height: inherit;
 	width: inherit;
 }
-.myScreen_full, .controlPage_full,.gFile_full,.progressPage {
+.myScreen_full, .controlPage_full,.gFile_full,.progressPage,.saveGamesPage_full,.gameFilePage_full {
 	position: absolute;
     top:0;
     left:0;
@@ -232,7 +232,7 @@ input[type=range]:focus::-ms-fill-upper {
 	margin:0 auto;
 	display: grid;
 }
-.lsClr, .fsToggle {
+.lsClr, .fsToggle,.lsClrItemsBtn {
 	width:50%;
 	margin: 5px auto;
 	padding: 8px 0;
@@ -436,8 +436,56 @@ input[type=range]:focus::-ms-fill-upper {
 	z-index: 3;
 
 }
-
-
+.saveGamesPage_full {
+	display: inherit;
+	padding: 2px;
+}
+.saveGamesPage_full p {
+	display: inline-grid;
+	height: 6vh;
+	width: 8vw;
+	margin: 3px;
+	line-height: 6vh;
+	box-shadow: 0 0 1px darkgrey;
+	text-align: center;
+}
+.saveGamesPage_full p:hover {
+	background: rgba(85,85,85,1);
+}
+.gameFilePage {
+	background-color: black;
+}
+.gameFilePage_full {
+	background-color: black;
+	display: flow-root;
+}
+.gameFilePage_full h2 {
+	text-align: center;
+	display: block;
+	width:100vw;
+}
+.gameFilePage_full table {
+	box-shadow: 0 0 1px silver;
+	background-color: white;
+	width:60vw;
+	margin:5vh 20vw;
+	padding: 0;
+	display: inline-grid;
+}
+.gameFilePage_full th {}
+.gameFilePage_full tr {
+	background-color: #070C2B;
+	margin: 0;
+	padding:  0;
+	width:-webkit-fill-available;
+	display: block;
+}
+.gameFilePage_full td {
+	display: inline-grid;
+    width: 50%;
+    text-align: center;
+    padding: 15px 0;
+}
 /*ID*/
 
 /*MULTIS*/
@@ -457,7 +505,7 @@ html, body {
 html,h1,button,p,div{
 	font-weight: 300;
 }
-.myScreen, .myScreen_full,.startPage,.controlPage,.controlPage_full,.gameNav_full,.gameNav {
+.myScreen, .myScreen_full,.startPage,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full {
 	background-color: #070C2B;
 	color:white;
 }
@@ -470,7 +518,7 @@ html,h1,button,p,div{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
 }
-.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full {
+.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full {
 	transition: 333ms all ease-in-out;
 }
 
