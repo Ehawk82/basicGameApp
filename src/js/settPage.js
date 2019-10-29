@@ -1,34 +1,4 @@
 var labelNames = ["MAIN","MUSIC","AMBIENT"];
-var tableInfo = [
-	[
-		[
-			"Words",
-			"All",
-			"",
-			"Sagitarious"
-		],
-		[
-			"Graziano",
-			"Andies",
-			"Zinc",
-			"India"
-		]
-	],
-	[
-		[
-			"opal",
-			"o",
-			"p",
-			"S"
-		],
-		[
-			"c",
-			"y",
-			"h",
-			"O"
-		]
-	]
-];
 
 var settings = {
 	page: function(container,items,bbb){
@@ -53,7 +23,7 @@ var settings = {
 
 		lsClr.innerHTML = "CLEAR ALL DATA";
 		lsClr.className = "lsClr";
-		lsClr.onclick = settings.clearLS();
+		lsClr.onclick = settings.loadWarnPage(settContainer);
 
 		fsToggle.innerHTML = "FULL SCREEN MODE";
 		fsToggle.className = "fsToggle";
@@ -87,6 +57,7 @@ var settings = {
 			rngs.max = 1;
 			rngs.min = 0;
 			rngs.step = .001;
+
 			if (i === 0) {
 				pingName = bbb.appVolume;
 				rngs.value = pingName;
@@ -140,11 +111,54 @@ var settings = {
 	},
 	evalLoadFile: function(i,bbb,bLD_length,sgItems,settContainer) {
 		return function(){
+			var areaNames = [" ","Desert","Marsh","Plains","Tundra","Grasslands"];
+			var charNames = [" ","Warrior","Range","Mounted"];
+			var elemNames = [" ","Fire","Water","Air"];
+			var tableInfo = [
+				[
+					[
+						"Level",
+						"Character",
+						"Region",
+						"Element"
+					],
+					[
+						bbb.level,
+						charNames[bbb.loadFiles[i].cType],
+						areaNames[bbb.loadFiles[i].rType],
+						elemNames[bbb.loadFiles[i].eType]
+					]
+				],
+				[
+					[
+						" ",
+						" ",
+						" ",
+						"&nbsp;"
+					],
+					[
+						" ",
+						" ",
+						" ",
+						"<button id='deleteBtn'>DELETE</button>"
+					]
+				]
+			];
+
 			sgItems.onclick = null;
 			var gameFilePage = createEle("div"),
-				giTable = createEle("table");
+				giTable = createEle("table"),
+				indexCodeHolder = createEle("div");
 
-			for (var i = 0; i < 2; i++) {
+			const indexCode = createEle("span");
+
+			indexCode.innerHTML = i + 1;
+
+			indexCodeHolder.innerHTML = "File no: ";
+			indexCodeHolder.className = "indexCodeHolder";
+			indexCodeHolder.append(indexCode);
+
+			for (var h = 0; h < 2; h++) {
 				var th = createEle("th");
 
 				for (var k = 0; k < 4; k++) {
@@ -153,7 +167,7 @@ var settings = {
 					for (var j = 0; j < 2; j++) {
 						var td = createEle("td");
 
-						td.innerHTML = tableInfo[i][j][k];
+						td.innerHTML = tableInfo[h][j][k];
 
 						tr.append(td);
 					}
@@ -165,12 +179,37 @@ var settings = {
 
 			gameFilePage.innerHTML = "<h2>" + bbb.loadFiles[i].name + "</h2>";
 			gameFilePage.className = "gameFilePage";
-			gameFilePage.append(giTable);
-	
+			gameFilePage.append(giTable,indexCodeHolder);
+
 			settContainer.append(gameFilePage);
 			setTimeout(function(){
 				makeFull(gameFilePage);
+
+				var deleteBtn = bySel("#deleteBtn");
+
+				deleteBtn.onclick = settings.evalDeleteFunc(i,bbb,bLD_length,sgItems,settContainer);
 			},0);
+		}
+	},
+	evalDeleteFunc: function(i,bbb,bLD_length,sgItems,settContainer){
+		return function(){
+			var bArr = [];
+
+			var bL = bbb.loadFiles;
+			for (var k = 0; k < bLD_length; k++) {
+				var bLjsp = JSON.stringify(bL[k]);
+				if(k > i || k < i){
+					bArr.push(bLjsp);
+				}
+			}
+			//var myFile = {bArr};
+
+			//bbb.fileLookup = +bbb.fileLookup - +1;
+			//bbb.loadFiles = myFile;
+
+			//saveLS("bGAuser", bbb);
+			//location.reload();
+/*needs help*/
 		}
 	},
 	controlsFunc: function(controlsLabel,settContainer){
@@ -198,6 +237,38 @@ var settings = {
 				bbb.cheats = false;
 			}
 			saveLS("bGAuser", bbb);
+		}
+	},
+	loadWarnPage: function(settContainer){
+		return function(){
+			var warnPage = createEle("div"),
+			    btnHolder = createEle("div"),
+			    yes = createEle("button"),
+			    no = createEle("button");
+
+			yes.innerHTML = "YES";
+			yes.onclick = settings.clearLS();
+
+			no.innerHTML = "NO";
+			no.onclick = settings.reloadApp();
+
+			btnHolder.className = "btnHolder";
+			btnHolder.append(yes,no);
+
+			warnPage.className = "warnPage";
+			warnPage.innerHTML = "<h2>YOU ARE ABOUT TO CLEAR ALL FILE STORAGE FOR THIS APP. PROCEED?</h2>";
+			warnPage.append(btnHolder);
+
+			settContainer.append(warnPage);
+			
+			setTimeout(function(){
+				makeFull(warnPage);
+			},0);
+		}
+	},
+	reloadApp: function(){
+		return function(){
+			location.reload();
 		}
 	},
 	clearLS: function(){

@@ -48,7 +48,6 @@ var game = {
 		gFile.append(gameFrame,progressPage);
 
 		setTimeout(function(){
-			
 			container.append(gFile);
 			game.loader(progressPage,myBar,gFile);
 			setTimeout(function(){

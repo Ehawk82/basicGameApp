@@ -1,7 +1,7 @@
 /*DOM*/
 html {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    font-weight: bolder;
+    font-weight: 800;
 }
 body {
 	height:100vh;
@@ -10,10 +10,10 @@ body {
 
 }
 a {
-	color:white;
+	color:silver;
 }
 a:visited {
-	color:white;
+	color:silver;
 }
 h1 {
 	display: -webkit-inline-box;
@@ -25,7 +25,7 @@ button {
 	background-color: #20203B;
 	border:none;
 	outline: none;
-	color:white;
+	color:silver;
 }
 button:active {
 	background-color: #10102B;
@@ -38,7 +38,7 @@ button:disabled {
 	opacity: 0.5;
 }
 ::selection {
-  background: #1D35B8;
+  background: transparent;
 }
 input[type=text] {
 	text-indent: 5px;
@@ -155,7 +155,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 }
 .startBtns {
-	display: -webkit-box;
+	display: block;
 	width: -webkit-fill-available;
 	margin: 3vh 0;
 	padding: 3vh 0;
@@ -171,7 +171,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin: -100vh auto 0 auto;
     padding: 10px 0;
 }
-.myScreen, .controlPage,.gFile,.saveGamesPage,.gameFilePage {
+.myScreen, .controlPage,.gFile,.saveGamesPage,.gameFilePage,.warnPage {
 	position: absolute;
     top:-100vh;
     left:0;
@@ -179,7 +179,7 @@ input[type=range]:focus::-ms-fill-upper {
 	height: inherit;
 	width: inherit;
 }
-.myScreen_full, .controlPage_full,.gFile_full,.progressPage,.saveGamesPage_full,.gameFilePage_full {
+.myScreen_full, .controlPage_full,.gFile_full,.progressPage,.saveGamesPage_full,.gameFilePage_full,.warnPage_full {
 	position: absolute;
     top:0;
     left:0;
@@ -269,7 +269,7 @@ input[type=range]:focus::-ms-fill-upper {
 	height: auto;
 	margin:15vh 20vw;
 	display: -webkit-box;
-	background-color: white;
+	background-color: silver;
 	padding: 5vh 0;
 }
 .form button {
@@ -299,7 +299,7 @@ input[type=range]:focus::-ms-fill-upper {
 	padding:0;
 	cursor: pointer;
 	background-color:  #20203B;
-	color:white;
+	color:silver;
 	text-align: center;
 	overflow: hidden;
 }
@@ -365,7 +365,7 @@ input[type=range]:focus::-ms-fill-upper {
 	background-color: rgba(110,110,255,.9);
 	height: 2px;
 	display: block;
-	box-shadow: 0 0 .5px white,0 0 1px white,0 0 3px white,0 0 6px white,0 0 9px white ;
+	box-shadow: 0 0 .5px silver,0 0 1px silver,0 0 3px silver,0 0 6px silver,0 0 9px silver ;
 
 }
 .gameNav {
@@ -423,7 +423,7 @@ input[type=range]:focus::-ms-fill-upper {
 	background-color: #070C2B;
 	font-size: 10px;
 	cursor: default;
-	box-shadow: 0 0 1px white inset;
+	box-shadow: 0 0 1px silver inset;
 }
 .navBtns {
 	height: -webkit-fill-available;
@@ -466,25 +466,40 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .gameFilePage_full table {
 	box-shadow: 0 0 1px silver;
-	background-color: white;
-	width:60vw;
-	margin:5vh 20vw;
+	background-color: #070C2B;
+	width:40vw;
+	margin:5vh 30vw;
 	padding: 0;
 	display: inline-grid;
 }
 .gameFilePage_full th {}
 .gameFilePage_full tr {
 	background-color: #070C2B;
-	margin: 0;
+	margin:  0;
 	padding:  0;
 	width:-webkit-fill-available;
 	display: block;
 }
 .gameFilePage_full td {
-	display: inline-grid;
-    width: 50%;
-    text-align: center;
-    padding: 15px 0;
+	display: -webkit-inline-box;
+    width: 30%;
+    padding: 15px 10%;
+    border-top: 1px ridge black;
+    border-bottom: 1px groove black;
+}
+.indexCodeHolder {
+	position: absolute;
+	bottom: 0;
+	left:0;
+	text-indent: 15px;
+}
+.btnHolder {
+	display: contents;
+}
+.btnHolder button {
+	display: inline-block;
+	padding: 50px;
+	margin: 1vh 2vw;
 }
 /*ID*/
 
@@ -505,9 +520,9 @@ html, body {
 html,h1,button,p,div{
 	font-weight: 300;
 }
-.myScreen, .myScreen_full,.startPage,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full {
+.myScreen, .myScreen_full,.startPage,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full {
 	background-color: #070C2B;
-	color:white;
+	color:silver;
 }
 
 .startBtns {
@@ -518,7 +533,7 @@ html,h1,button,p,div{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
 }
-.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full {
+.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full {
 	transition: 333ms all ease-in-out;
 }
 

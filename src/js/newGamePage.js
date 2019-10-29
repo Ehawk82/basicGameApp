@@ -46,6 +46,7 @@ var newGameProgram = {
 		nameIn.placeholder = "NAME";
 		nameIn.maxLength = 8;
 		nameIn.onkeyup = newGameProgram.validateName(ngBtn,nameIn);
+		nameIn.autofocus = true;
 
 		ngBtn.className = "ngBtn";
 		ngBtn.innerHTML = "✔";
@@ -86,7 +87,7 @@ var newGameProgram = {
 				rType: rtr[1],
 				eType: ete[1]
 			};
-
+//console.log(gfObject);
 			bbb.loadFiles[bbb.fileLookup] = gfObject;
 			bbb.fileLookup++;
 			bbb.gBool = true;

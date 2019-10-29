@@ -16,6 +16,7 @@ bgauser = {
 	loopBool: false,
 	loopSpeed: 100,
 	member: false,
+	level: 1,
 	collection: {},
 	notes: {},
 	gameTimeStamps: {
