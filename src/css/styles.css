@@ -3,6 +3,7 @@ html {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 800;
 	text-shadow: -1px 1px 1px #111,-1px 1px 1px #111,-1px 1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px -1px 1px #111,1px -1px 1px #111,1px -1px 1px #111;
+	letter-spacing: 3px;
 }
 body {
 	height:100vh;
@@ -23,17 +24,21 @@ h1 {
 	padding: 0;
 }
 button {
-	background-color: #10204B;
+	background-color: #20406F;
 	border:none;
 	outline: none;
+	letter-spacing: 3px;
 	color:white;
 	text-shadow: -1px 1px 1px #111,-1px 1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px -1px 1px #111,1px -1px 1px #111;
 }
 button:hover {
-	background-color: #50608B;
+	background-color: #30507F;
+}
+button:active {
+	background-color: #10305F;
 }
 button:disabled {
-	background-color: #10204B;
+	background-color: #30507F;
 	opacity: 0.5;
 }
 ::selection {
@@ -141,23 +146,21 @@ input[type=range]:focus::-ms-fill-upper {
 }
 /*CLASS*/
 .dvContain {
-	background-color: #40507B;
 	height: inherit;
 	width: inherit;
 	display: flow-root;
 	overflow: hidden;
 }
 .startPage {
-	background-color: white;
+	background-color: transparent;
 	height: auto;
 	width: 50vw;
 	margin: 10vh auto;
-
 }
 .startBtns {
 	display: block;
 	width: -webkit-fill-available;
-	margin: 2vh 0;
+	margin: 1vh 0;
 	padding: 4vh 0;
 }
 
@@ -438,8 +441,9 @@ input[type=range]:focus::-ms-fill-upper {
 .navBtns {
 	height: -webkit-fill-available;
 	width: -webkit-fill-available;
-	margin: 2px 2px 0 2px;
-	padding: 4px 0;
+	margin: 0;
+	padding: 0;
+	box-shadow: 0 0 1px inset white,0 0 1px inset white,0 0 1px inset white;
 }
 .gTabs {
 	position: relative;
@@ -530,9 +534,9 @@ html, body {
 html,h1,button,p,div{
 	font-weight: 300;
 }
-.gameFrame,.myScreen, .myScreen_full,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full {
-	background-color: #475C7B;
-	color:silver;
+.dvContain,.gameFrame,.myScreen, .myScreen_full,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full {
+	background-color: #60809F;
+	color:white;
 }
 
 .startBtns {

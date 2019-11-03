@@ -79,7 +79,7 @@ var newGameProgram = {
 			var ctc = charType.value.split("TYPE ");
 			var rtr = regType.value.split("AREA ");
 			var ete = elemType.value.split("ELEM ");
-
+console.log(ctc);
 			gfObject = {
 				key: "gf" + bbb.fileLookup,
 				name: nameIn.value,
