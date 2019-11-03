@@ -197,19 +197,23 @@ var settings = {
 
 			var bL = bbb.loadFiles;
 			for (var k = 0; k < bLD_length; k++) {
-				var bLjsp = JSON.stringify(bL[k]);
+				var bLjsp = bL[k];
 				if(k > i || k < i){
+					if(k > i){
+						bLjsp.key = "gf" + +(k - 1);
+					}
 					bArr.push(bLjsp);
 				}
 			}
-			//var myFile = {bArr};
+			bbb.fileLookup = +(bLD_length - 1);
+			if (bLD_length === 1) {
+				bbb.gBool = false;
+			}
+			bbb.loadFiles = bArr;
 
-			//bbb.fileLookup = +bbb.fileLookup - +1;
-			//bbb.loadFiles = myFile;
+			saveLS("bGAuser",bbb);
 
-			//saveLS("bGAuser", bbb);
-			//location.reload();
-/*needs help*/
+			location.reload();
 		}
 	},
 	controlsFunc: function(controlsLabel,settContainer){

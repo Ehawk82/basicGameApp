@@ -2,6 +2,7 @@
 html {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 800;
+	text-shadow: -1px 1px 1px #111,-1px 1px 1px #111,-1px 1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px -1px 1px #111,1px -1px 1px #111,1px -1px 1px #111;
 }
 body {
 	height:100vh;
@@ -25,13 +26,11 @@ button {
 	background-color: #10204B;
 	border:none;
 	outline: none;
-	color:silver;
-}
-button:active {
-	background-color: #00103B;
+	color:white;
+	text-shadow: -1px 1px 1px #111,-1px 1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px -1px 1px #111,1px -1px 1px #111;
 }
 button:hover {
-	background-color: #20305B;
+	background-color: #50608B;
 }
 button:disabled {
 	background-color: #10204B;
@@ -142,7 +141,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 /*CLASS*/
 .dvContain {
-	background-color: #10204B;
+	background-color: #40507B;
 	height: inherit;
 	width: inherit;
 	display: flow-root;
@@ -158,8 +157,8 @@ input[type=range]:focus::-ms-fill-upper {
 .startBtns {
 	display: block;
 	width: -webkit-fill-available;
-	margin: 3vh 0;
-	padding: 3vh 0;
+	margin: 2vh 0;
+	padding: 4vh 0;
 }
 
 .startMenu_full {
@@ -205,6 +204,17 @@ input[type=range]:focus::-ms-fill-upper {
 	right:1px;
 	height: 5.5vh;
 	width: 6vh;
+	font-size: 3vh;
+	color:white;
+	background-color: transparent;
+}
+.pauseBtn:hover {
+	color:lightgrey;
+	background-color: transparent;
+}
+.pauseBtn:active {
+	color:darkgrey;
+	background-color: transparent;
 }
 .container {
     display: block;
@@ -353,7 +363,7 @@ input[type=range]:focus::-ms-fill-upper {
 	z-index: 20;
 }
 .progressBar {
-	background-color: rgba(50,50,65,1);
+	background-color: #374C6B;
 	height: 2px;
 	width:80vw;
 	margin-top: 45vh;
@@ -363,10 +373,10 @@ input[type=range]:focus::-ms-fill-upper {
 
 }
 .myBar {
-	background-color: rgba(110,110,255,.9);
+	background-color: #fff;
 	height: 2px;
 	display: block;
-	box-shadow: 0 0 .5px silver,0 0 1px silver,0 0 3px silver,0 0 6px silver,0 0 9px silver ;
+	box-shadow: 0 0 .5px #374C6B,0 0 1px #374C6B,0 0 3px #374C6B,0 0 6px #374C6B,0 0 9px #374C6B;
 
 }
 .gameNav {
@@ -391,7 +401,6 @@ input[type=range]:focus::-ms-fill-upper {
 	
 }
 .gameFrame {
-	background-color: black;
 	width: 100vw;
 	height: -webkit-fill-available;
 }
@@ -405,11 +414,11 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .gameConsole {
 	position: absolute;
+	background-color: black;
 	display: block;
 	height: -webkit-fill-available;
 	width: 90vw;
 	left: 10vw;
-	background-color: black;
 }
 .nameholder {
 	width: -webkit-fill-available;
@@ -521,8 +530,8 @@ html, body {
 html,h1,button,p,div{
 	font-weight: 300;
 }
-.myScreen, .myScreen_full,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full {
-	background-color: #172C4B;
+.gameFrame,.myScreen, .myScreen_full,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full {
+	background-color: #475C7B;
 	color:silver;
 }
 
