@@ -488,7 +488,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .gameFilePage_full th {}
 .gameFilePage_full tr {
-	background-color: #172C4B;
 	margin:  0;
 	padding:  0;
 	width:-webkit-fill-available;
@@ -498,9 +497,15 @@ input[type=range]:focus::-ms-fill-upper {
 	display: -webkit-inline-box;
     width: 30%;
     padding: 15px 10%;
-    border-top: 1px ridge black;
-    border-bottom: 1px groove black;
 }
+
+.gameFilePage_full tr:nth-child(odd) td{
+	background-color: #172C4F;
+}
+.gameFilePage_full tr:nth-child(even) td{
+	background-color: #374C6F;
+}
+
 .indexCodeHolder {
 	position: absolute;
 	bottom: 0;

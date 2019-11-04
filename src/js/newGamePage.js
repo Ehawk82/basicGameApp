@@ -1,6 +1,6 @@
-var charOptions = ["","TYPE 1","TYPE 2","TYPE 3"];
-var regOptions = ["","AREA 1","AREA 2","AREA 3","AREA 4","AREA 5"];
-var elemOptions = ["","ELEM 1","ELEM 2", "ELEM 3"];
+var charOptions = ["","SPECIES 1","SPECIES 2","SPECIES 3"];
+var regOptions = ["","PLANET 1","PLANET 2","PLANET 3","PLANET 4","PLANET 5"];
+var elemOptions = ["","GALAXY 1","GALAXY 2", "GALAXY 3"];
 var newGameProgram = {
 	page: function(container,items,bbb){
 		var newGameContainer = createEle("div"),
@@ -76,18 +76,23 @@ var newGameProgram = {
 	submitForm: function(nameIn,charType,regType,elemType,ngBtn){
 		return function(){
 			var bbb = parseLS("bGAuser"),gfObject, startBtns = bySelAll(".startBtns");
-			var ctc = charType.value.split("TYPE ");
-			var rtr = regType.value.split("AREA ");
-			var ete = elemType.value.split("ELEM ");
-console.log(ctc);
+			var ctc = charType.value.split("SPECIES "),
+				rtr = regType.value.split("PLANET "),
+				ete = elemType.value.split("GALAXY ");
+
+			var ts = currentTime();
+
 			gfObject = {
 				key: "gf" + bbb.fileLookup,
 				name: nameIn.value,
 				cType: ctc[1],
 				rType: rtr[1],
-				eType: ete[1]
+				eType: ete[1],
+				matter: 1,
+				life: 0,
+				timestamp: ts
 			};
-//console.log(gfObject);
+
 			bbb.loadFiles[bbb.fileLookup] = gfObject;
 			bbb.fileLookup++;
 			bbb.gBool = true;

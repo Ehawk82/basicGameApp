@@ -1,8 +1,8 @@
 var gameStuffs,cTypeName,rTypeName,eTypeName;
 
-cTypeName = ["CHARACTER 1","CHARACTER 2","CHARACTER 2"];
-rTypeName = ["REGION 1","REGION 2","REGION 3","REGION 4","REGION 5"];
-eTypeName = ["ELEMENT 1","ELEMENT 2","ELEMENT 3"];
+cTypeName = ["HOMINIDS","GREYS","CATS"];
+rTypeName = ["EARTH","JULE","VEGETA","MARS","KEPLAR 20B"];
+eTypeName = ["MILKY WAY","ANDROMEDA","PINWHEEL"];
 
 var navAss = ["📌","🔧","🧪","➕","🔒","🔒","🔒","🔒"];
 var navAss1 = ["🔒","🔒","🔒","🔒","🔒","🔒","🔒","🔒"];

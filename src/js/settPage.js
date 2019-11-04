@@ -111,6 +111,17 @@ var settings = {
 	},
 	evalLoadFile: function(i,bbb,bLD_length,sgItems,settContainer) {
 		return function(){
+			var ts = currentTime();
+			var tDiff = +ts - +bbb.loadFiles[i].timestamp;
+
+			var dateObj = new Date(tDiff * 1000);
+
+    		var hours = dateObj.getUTCHours(),
+    			minutes = dateObj.getUTCMinutes(),
+    			seconds = dateObj.getSeconds();
+
+			timeString = hours.toString().padStart(3, '0') + ' : ' + minutes.toString().padStart(2, '0') + ' : ' + seconds.toString().padStart(2, '0');
+
 			var areaNames = [" ","Desert","Marsh","Plains","Tundra","Grasslands"];
 			var charNames = [" ","Warrior","Range","Mounted"];
 			var elemNames = [" ","Fire","Water","Air"];
@@ -131,15 +142,15 @@ var settings = {
 				],
 				[
 					[
-						" ",
-						" ",
-						" ",
+						"Matter",
+						"Life",
+						"Age",
 						"&nbsp;"
 					],
 					[
-						" ",
-						" ",
-						" ",
+						bbb.loadFiles[i].matter,
+						bbb.loadFiles[i].life,
+						timeString,
 						"<button id='deleteBtn'>DELETE</button>"
 					]
 				]
