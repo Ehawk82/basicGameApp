@@ -492,9 +492,11 @@ input[type=range]:focus::-ms-fill-upper {
 .gameFilePage_full td {
 	display: -webkit-inline-box;
     width: 30%;
-    padding: 15px 10%;
+    padding: 20px 10%;
 }
-
+.gameFilePage_full td button:hover {
+	background-color: red;
+}
 .gameFilePage_full tr:nth-child(odd) td{
 	background-color: #172C4F;
 }
