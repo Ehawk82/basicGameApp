@@ -12,10 +12,10 @@ body {
 
 }
 a {
-	color:silver;
+	color:#fff;
 }
 a:visited {
-	color:silver;
+	color:#fff;
 }
 h1 {
 	display: -webkit-inline-box;
@@ -205,7 +205,7 @@ input[type=range]:focus::-ms-fill-upper {
 	position: absolute;
 	top:1px;
 	right:1px;
-	height: 5.5vh;
+	height: 5vh;
 	width: 6vh;
 	font-size: 3vh;
 	color:white;
@@ -283,7 +283,7 @@ input[type=range]:focus::-ms-fill-upper {
 	height: auto;
 	margin:15vh 20vw;
 	display: -webkit-box;
-	background-color: silver;
+	background-color: #fff;
 	padding: 5vh 0;
 }
 .form button {
@@ -313,7 +313,7 @@ input[type=range]:focus::-ms-fill-upper {
 	padding:0;
 	cursor: pointer;
 	background-color:  #10204B;
-	color:silver;
+	color:#fff;
 	text-align: center;
 	overflow: hidden;
 }
@@ -366,21 +366,17 @@ input[type=range]:focus::-ms-fill-upper {
 	z-index: 20;
 }
 .progressBar {
-	background-color: #374C6B;
-	height: 2px;
+	background-color: #072C4F;
+	height: 4px;
 	width:80vw;
 	margin-top: 45vh;
 	margin-left: 10vw;
 	display: block;
-	box-shadow: 0 0 .5px rgba(80,80,155,1) inset,0 0 1px rgba(140,140,155,1) inset;
-
 }
 .myBar {
-	background-color: #fff;
-	height: 2px;
+	background-color: #7080AF;
+	height: 4px;
 	display: block;
-	box-shadow: 0 0 .5px #374C6B,0 0 1px #374C6B,0 0 3px #374C6B,0 0 6px #374C6B,0 0 9px #374C6B;
-
 }
 .gameNav {
 	position: absolute;
@@ -436,7 +432,7 @@ input[type=range]:focus::-ms-fill-upper {
 	background-color: #070C2B;
 	font-size: 10px;
 	cursor: default;
-	box-shadow: 0 0 1px silver inset;
+	box-shadow: 0 0 1px #fff inset;
 }
 .navBtns {
 	height: -webkit-fill-available;
@@ -479,11 +475,11 @@ input[type=range]:focus::-ms-fill-upper {
 	width:100vw;
 }
 .gameFilePage_full table {
-	box-shadow: 0 0 1px silver;
+	box-shadow: 0 0 1px #fff,0 0 1px #fff,0 0 1px #fff;
 	background-color: #172C4B;
 	width:40vw;
 	margin:5vh 30vw;
-	padding: 0;
+	padding: 1px;
 	display: inline-grid;
 }
 .gameFilePage_full th {}
@@ -496,9 +492,11 @@ input[type=range]:focus::-ms-fill-upper {
 .gameFilePage_full td {
 	display: -webkit-inline-box;
     width: 30%;
-    padding: 15px 10%;
+    padding: 20px 10%;
 }
-
+.gameFilePage_full td button:hover {
+	background-color: red;
+}
 .gameFilePage_full tr:nth-child(odd) td{
 	background-color: #172C4F;
 }

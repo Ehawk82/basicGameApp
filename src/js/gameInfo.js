@@ -4,7 +4,7 @@ cTypeName = ["HOMINID SOCIETY","GREY COLLECTIVE","FELINE COLONY"];
 rTypeName = ["VEGA","JULE","DARCOS","PLANET YORK","KEPLAR 20B"];
 eTypeName = ["SPIRAL","SOMRERO","PINWHEEL"];
 
-var navAss = ["📌","🔧","🧪","➕","🔒","🔒","🔒","🔒"];
+var navAss = ["🔵","🔧","🧪","➕","🔒","🔒","🔒","🔒"];
 var navAss1 = ["🔒","🔒","🔒","🔒","🔒","🔒","🔒","🔒"];
 
 gameStuffs = {
@@ -43,32 +43,45 @@ gameStuffs = {
 			navBtns.className = "navBtns";
 			navBtns.innerHTML = navAss[i];
 
-			if(i === 0){
+			if(i === 0) {
+				navBtns.disabled = false;
+				navBtns.onclick = gameStuffs.cycle(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
+			}
+
+			if(i === 1) {
 				navBtns.disabled = false;
 			}
-			if(i === 1){
+
+			if(i === 2) {
 				navBtns.disabled = false;
 			}
-			if(i === 2){
+
+			if(i === 3) {
 				navBtns.disabled = false;
 			}
-			if(i === 3){
-				navBtns.disabled = false;
-			}
-			if(i === 4){
+
+			if(i === 4) {
 				navBtns.disabled = true;
 			}
-			if(i === 5){
+
+			if(i === 5) {
 				navBtns.disabled = true;
 			}
-			if(i === 6){
+
+			if(i === 6) {
 				navBtns.disabled = true;
 			}
-			if(i === 7){
+
+			if(i === 7) {
 				navBtns.disabled = true;
 			}
 
 			gameNav.append(navBtns);
+		}
+	},
+	cycle: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i) {
+		return function(){
+			console.log(navBtns);
 		}
 	},
 	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){

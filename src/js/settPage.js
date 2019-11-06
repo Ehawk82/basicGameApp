@@ -122,22 +122,19 @@ var settings = {
 
 			timeString = hours.toString().padStart(3, '0') + ' : ' + minutes.toString().padStart(2, '0') + ' : ' + seconds.toString().padStart(2, '0');
 
-			var areaNames = [" ","Desert","Marsh","Plains","Tundra","Grasslands"];
-			var charNames = [" ","Warrior","Range","Mounted"];
-			var elemNames = [" ","Fire","Water","Air"];
 			var tableInfo = [
 				[
 					[
 						"Level",
-						"Character",
-						"Region",
-						"Element"
+						"SPECIES",
+						"PLANET",
+						"GALAXY"
 					],
 					[
 						bbb.level,
-						charNames[bbb.loadFiles[i].cType],
-						areaNames[bbb.loadFiles[i].rType],
-						elemNames[bbb.loadFiles[i].eType]
+						cTypeName[i],
+						rTypeName[i],
+						eTypeName[i]
 					]
 				],
 				[
@@ -150,7 +147,7 @@ var settings = {
 					[
 						bbb.loadFiles[i].matter,
 						bbb.loadFiles[i].life,
-						timeString,
+						tDiff,
 						"<button id='deleteBtn'>DELETE</button>"
 					]
 				]

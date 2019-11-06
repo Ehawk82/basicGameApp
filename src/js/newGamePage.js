@@ -80,11 +80,12 @@ var newGameProgram = {
 				rtr = regType.value.split("PLANET "),
 				ete = elemType.value.split("GALAXY ");
 
-			var ts = currentTime();
+			var ts = currentTime(),
+			    nm = nameIn.value.toUpperCase();
 
 			gfObject = {
 				key: "gf" + bbb.fileLookup,
-				name: nameIn.value.toUpperCase(),
+				name: nm,
 				cType: ctc[1],
 				rType: rtr[1],
 				eType: ete[1],
