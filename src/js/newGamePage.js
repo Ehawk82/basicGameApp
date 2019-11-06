@@ -84,13 +84,23 @@ var newGameProgram = {
 
 			gfObject = {
 				key: "gf" + bbb.fileLookup,
-				name: nameIn.value,
+				name: nameIn.value.toUpperCase(),
 				cType: ctc[1],
 				rType: rtr[1],
 				eType: ete[1],
 				matter: 1,
 				life: 0,
-				timestamp: ts
+				timestamp: ts,
+				medals: 0,
+				allies: 0,
+				friends: 0,
+				gravity: 0.001,
+				items: {},
+				terra: 1,
+				water: 0,
+				atmos: 0,
+				satelites: 0,
+				gold: 0
 			};
 
 			bbb.loadFiles[bbb.fileLookup] = gfObject;

@@ -1,8 +1,8 @@
 var gameStuffs,cTypeName,rTypeName,eTypeName;
 
-cTypeName = ["HOMINIDS","GREYS","CATS"];
-rTypeName = ["EARTH","JULE","VEGETA","MARS","KEPLAR 20B"];
-eTypeName = ["MILKY WAY","ANDROMEDA","PINWHEEL"];
+cTypeName = ["HOMINID SOCIETY","GREY COLLECTIVE","FELINE COLONY"];
+rTypeName = ["VEGA","JULE","DARCOS","PLANET YORK","KEPLAR 20B"];
+eTypeName = ["SPIRAL","SOMRERO","PINWHEEL"];
 
 var navAss = ["📌","🔧","🧪","➕","🔒","🔒","🔒","🔒"];
 var navAss1 = ["🔒","🔒","🔒","🔒","🔒","🔒","🔒","🔒"];
@@ -68,7 +68,6 @@ gameStuffs = {
 				navBtns.disabled = true;
 			}
 
-
 			gameNav.append(navBtns);
 		}
 	},
@@ -103,7 +102,6 @@ gameStuffs = {
 			if(i === 7){
 				navBtns1.disabled = true;
 			}
-
 
 			gameNav1.append(navBtns1);
 		}
