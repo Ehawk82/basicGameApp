@@ -23,7 +23,6 @@ gameStuffs = {
 
 		planet.innerHTML = "&nbsp;";
 		planet.className = "planet";
-		gameStuffs.renderPlanet(planet,gameConsole);
 
 		cTypeHolder.innerHTML = cTypeName[c];
 		cTypeHolder.className = "cTypeHolder";
@@ -41,9 +40,23 @@ gameStuffs = {
 		nameholder.className = "nameholder";
 
 		gameConsole.append(nameholder,planet);
+		setTimeout(function(){
+			gameConsole.onload = gameStuffs.renderPlanet(planet,i);
+		},100);
 	},
-	renderPlanet: function(planet,gameConsole){
-///
+	renderPlanet: function(planet,i){
+		var bbb = parseLS("bGAuser");
+
+		var gameConsole = bySel(".gameConsole"),
+			hW = gameConsole.offsetWidth / 2,
+			hMw = bbb.loadFiles[i].matter / 2,
+			hH = gameConsole.offsetHeight / 2,
+			hMh = bbb.loadFiles[i].matter / 2;
+
+		planet.style.left = (hW - hMw) + "px";
+		planet.style.top = (hH - hMw) + "px";
+		planet.style.height = bbb.loadFiles[i].matter + "px";
+		planet.style.width = bbb.loadFiles[i].matter + "px";
 	},
 	navAssets: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
 		for (var i = 0; i < navAss.length; i++) {

@@ -14,7 +14,6 @@ var game = {
 			navToggle = createEle("button"),
 			gameConsole = createEle("div");
 
-		//console.log(bbb.loadFiles[i].name);
 		gameConsole.onload = gameStuffs.assets(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
 		gameConsole.className = "gameConsole";
 
@@ -55,6 +54,12 @@ var game = {
 				myScreen.append(navToggle);
 			},666);
 		},50);
+	},
+	renderPlanet: function(planet){
+		var gameConsole = bySel(".gameConsole");
+
+
+		console.log(gameConsole.offsetWidth);
 	},
 	tgglNav: function(gameNav,gameNav1) {
 		return function(){
