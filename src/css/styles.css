@@ -536,6 +536,10 @@ input[type=range]:focus::-ms-fill-upper {
 	padding: 50px;
 	margin: 1vh 2vw;
 }
+.planet {
+	background-color: white;
+	position: absolute;
+}
 /*ID*/
 
 /*MULTIS*/

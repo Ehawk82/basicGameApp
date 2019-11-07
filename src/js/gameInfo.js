@@ -1,6 +1,6 @@
 var gameStuffs,cTypeName,rTypeName,eTypeName;
 
-cTypeName = ["HOMINID SOCIETY","GREY COLLECTIVE","FELINE COLONY"];
+cTypeName = ["HUMANITY","GREY","PRIDE"];
 rTypeName = ["VEGA","JULE","DARCOS","PLANET YORK","KEPLAR 20B"];
 eTypeName = ["SPIRAL","SOMRERO","PINWHEEL"];
 
@@ -19,6 +19,12 @@ gameStuffs = {
 		    etype = bbb.loadFiles[i].eType,
 		    c = (+ctype - 1),r = (+rtype - 1),e = (+etype - 1);
 
+		var planet = createEle("div");
+
+		planet.innerHTML = "&nbsp;";
+		planet.className = "planet";
+		gameStuffs.renderPlanet(planet,gameConsole);
+
 		cTypeHolder.innerHTML = cTypeName[c];
 		cTypeHolder.className = "cTypeHolder";
 
@@ -34,7 +40,10 @@ gameStuffs = {
 		nameholder.append(nameIn,cTypeHolder,rTypeHolder,eTypeHolder);
 		nameholder.className = "nameholder";
 
-		gameConsole.append(nameholder);
+		gameConsole.append(nameholder,planet);
+	},
+	renderPlanet: function(planet,gameConsole){
+///
 	},
 	navAssets: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
 		for (var i = 0; i < navAss.length; i++) {
