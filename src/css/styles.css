@@ -190,6 +190,24 @@ input[type=range]:focus::-ms-fill-upper {
 	height: inherit;
 	width: inherit;
 }
+.toolPage,.resPage {
+	position: fixed;
+    top:-100vh;
+    left:0;
+	display: -webkit-box;
+	height: -webkit-fill-available;
+	width: -webkit-fill-available;
+	z-index: 20;
+}
+.toolPage_full,.resPage_full {
+	position: fixed;
+    top:0;
+    left:0;
+	display: -webkit-box;
+	height: -webkit-fill-available;
+	width: -webkit-fill-available;
+		z-index: 20;
+}
 .controlPage_full,.controlPage {
 	background-image: url("../assets/controls.png");
 	background-position: center;
@@ -201,7 +219,7 @@ input[type=range]:focus::-ms-fill-upper {
 	font-size:5vh;
 	cursor: default;
 }
-.pauseBtn {
+.pauseBtn,.resXOutBtn,.toolXOutBtn {
 	position: absolute;
 	top:1px;
 	right:1px;
@@ -211,11 +229,11 @@ input[type=range]:focus::-ms-fill-upper {
 	color:white;
 	background-color: transparent;
 }
-.pauseBtn:hover {
+.pauseBtn:hover,.resXOutBtn:hover,.toolXOutBtn:hover {
 	color:lightgrey;
 	background-color: transparent;
 }
-.pauseBtn:active {
+.pauseBtn:active,.resXOutBtn:active,.toolXOutBtn:active {
 	color:darkgrey;
 	background-color: transparent;
 }
@@ -537,7 +555,7 @@ html, body {
 html,h1,button,p,div{
 	font-weight: 300;
 }
-.dvContain,.gameFrame,.myScreen, .myScreen_full,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full {
+.dvContain,.gameFrame,.myScreen, .myScreen_full,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
 	background-color: #60809F;
 	color:white;
 }
@@ -550,7 +568,7 @@ html,h1,button,p,div{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
 }
-.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full {
+.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
 	transition: 333ms all ease-in-out;
 }
 

@@ -50,14 +50,17 @@ gameStuffs = {
 
 			if(i === 1) {
 				navBtns.disabled = false;
+				navBtns.onclick = gameStuffs.tools(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
 			}
 
 			if(i === 2) {
 				navBtns.disabled = false;
+				navBtns.onclick = gameStuffs.research(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
 			}
 
 			if(i === 3) {
 				navBtns.disabled = false;
+				navBtns.onclick = gameStuffs.addition(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
 			}
 
 			if(i === 4) {
@@ -81,7 +84,68 @@ gameStuffs = {
 	},
 	cycle: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i) {
 		return function(){
-			console.log(navBtns);
+			console.log("cycle");
+		}
+	},
+	tools: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i) {
+		return function(){
+			var toolPage = createEle("div"),
+				toolXOutBtn = createEle("button");
+
+			toolXOutBtn.innerHTML = "❌";
+			toolXOutBtn.className = "toolXOutBtn";
+			toolXOutBtn.onclick = gameStuffs.toolsXOutFunc(toolPage);
+			
+			toolPage.innerHTML = "<h1>TOOLS<h1>";
+			toolPage.className = "toolPage";
+			toolPage.append(toolXOutBtn);
+
+			container.append(toolPage);
+
+			setTimeout(function(){
+				makeFull(toolPage);
+			},0);
+		}
+	},
+	toolsXOutFunc: function(toolPage){
+		return function(){
+			takeFull(toolPage);
+			setTimeout(function(){
+				toolPage.remove();
+			},666);
+		}
+	},
+	research: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i) {
+		return function(){
+			var resPage = createEle("div"),
+				resXOutBtn = createEle("button");
+
+			resXOutBtn.innerHTML = "❌";
+			resXOutBtn.className = "resXOutBtn";
+			resXOutBtn.onclick = gameStuffs.resXOutFunc(resPage);
+			
+			resPage.innerHTML = "<h1>RESEARCH<h1>";
+			resPage.className = "resPage";
+			resPage.append(resXOutBtn);
+
+			container.append(resPage);
+
+			setTimeout(function(){
+				makeFull(resPage);
+			},0);
+		}
+	},
+	resXOutFunc: function(resPage){
+		return function(){
+			takeFull(resPage);
+			setTimeout(function(){
+				resPage.remove();
+			},666);
+		}
+	},
+	addition: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i) {
+		return function(){
+			console.log("addition");
 		}
 	},
 	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
