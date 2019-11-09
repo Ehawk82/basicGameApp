@@ -59,57 +59,82 @@ gameStuffs = {
 		planet.style.width = bbb.loadFiles[i].matter + "px";
 	},
 	navAssets: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
-		for (var i = 0; i < navAss.length; i++) {
+		for (var k = 0; k < navAss.length; k++) {
 			var navBtns = createEle("button");
 
 			navBtns.className = "navBtns";
-			navBtns.innerHTML = navAss[i];
+			navBtns.innerHTML = navAss[k];
 
-			if(i === 0) {
-				navBtns.disabled = false;
-				navBtns.onclick = gameStuffs.cycle(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
+			if(k === 0) {
+				navBtns.id = "cycleBtn";
+				if(bbb.loadFiles[i].moves === 0){
+					navBtns.disabled = false;
+				} else {
+					navBtns.disabled = true;
+				}
+				navBtns.onclick = gameStuffs.cycle(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k);
 			}
 
-			if(i === 1) {
+			if(k === 1) {
 				navBtns.disabled = false;
-				navBtns.onclick = gameStuffs.tools(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
+				navBtns.onclick = gameStuffs.tools(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k);
 			}
 
-			if(i === 2) {
+			if(k === 2) {
 				navBtns.disabled = false;
-				navBtns.onclick = gameStuffs.research(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
+				navBtns.onclick = gameStuffs.research(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k);
 			}
 
-			if(i === 3) {
-				navBtns.disabled = false;
-				navBtns.onclick = gameStuffs.addition(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
+			if(k === 3) {
+				navBtns.id = "addBtn";
+				if(bbb.loadFiles[i].moves > 0){
+					navBtns.disabled = false;
+				} else {
+					navBtns.disabled = true;
+				}
+				navBtns.onclick = gameStuffs.addition(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k);
 			}
-
-			if(i === 4) {
+			if(k === 4) {
 				navBtns.disabled = true;
 			}
 
-			if(i === 5) {
+			if(k === 5) {
 				navBtns.disabled = true;
 			}
 
-			if(i === 6) {
+			if(k === 6) {
 				navBtns.disabled = true;
 			}
 
-			if(i === 7) {
+			if(k === 7) {
 				navBtns.disabled = true;
 			}
 
 			gameNav.append(navBtns);
 		}
 	},
-	cycle: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i) {
+	cycle: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k) {
 		return function(){
-			console.log("cycle");
+			var addBtn = bySel("#addBtn");
+			navBtns.disabled = true;
+			navBtns.innerHTML = "⏳";
+
+			bbb.loadFiles[i].moves++;
+
+			setTimeout(function(){
+				saveLS("bGAuser",bbb);
+				if(bbb.loadFiles[i].moves === 0){
+					navBtns.disabled = false;
+					addBtn.disabled = true;
+				} else {
+					navBtns.disabled = true;
+					addBtn.disabled = false;
+				}
+				navBtns.innerHTML = navAss[k];
+			},1000);
 		}
 	},
-	tools: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i) {
+	tools: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k) {
 		return function(){
 			var toolPage = createEle("div"),
 				toolXOutBtn = createEle("button");
@@ -137,7 +162,7 @@ gameStuffs = {
 			},666);
 		}
 	},
-	research: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i) {
+	research: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k) {
 		return function(){
 			var resPage = createEle("div"),
 				resXOutBtn = createEle("button");
@@ -157,7 +182,7 @@ gameStuffs = {
 			},0);
 		}
 	},
-	resXOutFunc: function(resPage){
+	resXOutFunc: function(resPage,k){
 		return function(){
 			takeFull(resPage);
 			setTimeout(function(){
@@ -165,9 +190,25 @@ gameStuffs = {
 			},666);
 		}
 	},
-	addition: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i) {
+	addition: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k) {
 		return function(){
-			console.log("addition");
+			var cycleBtn = bySel("#cycleBtn");
+			navBtns.disabled = true;
+			navBtns.innerHTML = "⏳";
+
+			bbb.loadFiles[i].moves--;
+
+			setTimeout(function(){
+				saveLS("bGAuser",bbb);
+				if(bbb.loadFiles[i].moves > 0){
+					navBtns.disabled = false;
+					cycleBtn.disabled = true;
+				} else {
+					navBtns.disabled = true;
+					cycleBtn.disabled = false;
+				}
+				navBtns.innerHTML = navAss[k];
+			},1000);
 		}
 	},
 	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){

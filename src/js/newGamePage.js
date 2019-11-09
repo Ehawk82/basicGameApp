@@ -101,7 +101,8 @@ var newGameProgram = {
 				water: 0,
 				atmos: 0,
 				satelites: 0,
-				gold: 0
+				gold: 0,
+				moves: 1
 			};
 
 			bbb.loadFiles[bbb.fileLookup] = gfObject;
