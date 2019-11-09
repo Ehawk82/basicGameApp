@@ -2,7 +2,7 @@ var gameStuffs,cTypeName,rTypeName,eTypeName;
 
 cTypeName = ["HUMANITY","GREY","PRIDE"];
 rTypeName = ["VEGA","JULE","DARCOS","PLANET YORK","KEPLAR 20B"];
-eTypeName = ["SPIRAL","SOMRERO","PINWHEEL"];
+eTypeName = ["SPIRAL","SOMBRERO","PINWHEEL"];
 
 var navAss = ["🔵","🔧","🧪","➕","🔒","🔒","🔒","🔒"];
 var navAss1 = ["🔒","🔒","🔒","🔒","🔒","🔒","🔒","🔒"];
@@ -120,7 +120,7 @@ gameStuffs = {
 			navBtns.disabled = true;
 			navBtns.innerHTML = "⏳";
 
-			bbb.loadFiles[i].moves = bbb.loadFiles[i].moves + 2;
+			bbb.loadFiles[i].moves = bbb.loadFiles[i].moves + bbb.level;
 
 			setTimeout(function(){
 				saveLS("bGAuser",bbb);
@@ -198,7 +198,7 @@ gameStuffs = {
 			navBtns.innerHTML = "⏳";
 
 			bbb.loadFiles[i].moves--;
-
+			//bbb.loadFiles[i].gLevel++;
 			setTimeout(function(){
 				saveLS("bGAuser",bbb);
 				if(bbb.loadFiles[i].moves > 0){
@@ -213,34 +213,34 @@ gameStuffs = {
 		}
 	},
 	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
-		for (var i = 0; i < navAss1.length; i++) {
+		for (var j = 0; j < navAss1.length; j++) {
 			var navBtns1 = createEle("button");
 
 			navBtns1.className = "navBtns";
 			navBtns1.innerHTML = navAss1[i];
 
-			if(i === 0){
+			if(j === 0){
 				navBtns1.disabled = true;
 			}
-			if(i === 1){
+			if(j === 1){
 				navBtns1.disabled = true;
 			}
-			if(i === 2){
+			if(j === 2){
 				navBtns1.disabled = true;
 			}
-			if(i === 3){
+			if(j === 3){
 				navBtns1.disabled = true;
 			}
-			if(i === 4){
+			if(j === 4){
 				navBtns1.disabled = true;
 			}
-			if(i === 5){
+			if(j === 5){
 				navBtns1.disabled = true;
 			}
-			if(i === 6){
+			if(j === 6){
 				navBtns1.disabled = true;
 			}
-			if(i === 7){
+			if(j === 7){
 				navBtns1.disabled = true;
 			}
 

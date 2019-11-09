@@ -11,7 +11,7 @@ var settings = {
 			lsClrItemsBtn = createEle("button"),
 			fsToggle = createEle("button"),
 			chtLabel = createEle("span"),
-			controlsLabel = createEle("div"),
+			controlsLabel = createEle("button"),
 			cheatsToggle = createEle("input");
 
 		lsLabel.innerHTML = "APPLICATION";
@@ -132,9 +132,9 @@ var settings = {
 					],
 					[
 						bbb.level,
-						cTypeName[i],
-						rTypeName[i],
-						eTypeName[i]
+						cTypeName[bbb.loadFiles[i].cType - 1],
+						rTypeName[bbb.loadFiles[i].rType - 1],
+						eTypeName[bbb.loadFiles[i].eType - 1]
 					]
 				],
 				[

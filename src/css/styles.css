@@ -24,7 +24,7 @@ h1 {
 	padding: 0;
 }
 button {
-	background-color: #20406F;
+	background-color: #323B47;
 	border:none;
 	outline: none;
 	letter-spacing: 3px;
@@ -32,14 +32,14 @@ button {
 	text-shadow: -1px 1px 1px #111,-1px 1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px -1px 1px #111,1px -1px 1px #111;
 }
 button:hover {
-	background-color: #30507F;
+	background-color: #424B57;
 }
 button:active {
-	background-color: #10305F;
+	background-color: #121B27;
 }
 button:disabled {
-	background-color: #30507F;
-	opacity: 0.5;
+	background-color: #424B57;
+	opacity: 0.2;
 }
 ::selection {
   background: transparent;
@@ -163,7 +163,6 @@ input[type=range]:focus::-ms-fill-upper {
 	margin: 1vh 0;
 	padding: 4vh 0;
 }
-
 .startMenu_full {
 	width: 40vw;
     margin: 20vh auto 0 auto;
@@ -244,7 +243,6 @@ input[type=range]:focus::-ms-fill-upper {
     position: absolute;
     left: 0;
     top: 5.5vh;
-
 }
 .devLog, .settContainer, .loadContainer, .newGameContainer,.gFile,.gFile_full {
 	background-color: black;
@@ -330,7 +328,7 @@ input[type=range]:focus::-ms-fill-upper {
 	margin: 5px;
 	padding:0;
 	cursor: pointer;
-	background-color:  #10204B;
+	background-color:  #323B37;
 	color:#fff;
 	text-align: center;
 	overflow: hidden;
@@ -338,7 +336,7 @@ input[type=range]:focus::-ms-fill-upper {
 .loadBox div span {
 }
 .loadBox div:hover {
-	background-color: #20305B;
+	background-color: #424B47;
 }
 .ngBtn {
 
@@ -349,11 +347,9 @@ input[type=range]:focus::-ms-fill-upper {
 	right:5vw;
 	width: 5vw;
 	height: 5vw;
-
 }
 .controlsLabel {
 	cursor: pointer;
-	background-color: #20305B;
 	margin:8px 0;
 	padding: 8px 16px;
 	width: fit-content;
@@ -384,7 +380,7 @@ input[type=range]:focus::-ms-fill-upper {
 	z-index: 20;
 }
 .progressBar {
-	background-color: #072C4F;
+	background-color: #121B17;
 	height: 4px;
 	width:80vw;
 	margin-top: 45vh;
@@ -392,7 +388,7 @@ input[type=range]:focus::-ms-fill-upper {
 	display: block;
 }
 .myBar {
-	background-color: #7080AF;
+	background-color: #828B87;
 	height: 4px;
 	display: block;
 }
@@ -449,7 +445,7 @@ input[type=range]:focus::-ms-fill-upper {
 	display: grid;
 	margin: 0;
 	padding: 8px 0;
-	background-color: #070C2B;
+	background-color: #323B37;
 	font-size: 10px;
 	cursor: default;
 	box-shadow: 0 0 1px #fff inset;
@@ -457,14 +453,13 @@ input[type=range]:focus::-ms-fill-upper {
 .navBtns {
 	height: -webkit-fill-available;
 	width: -webkit-fill-available;
-	margin: 0;
+	margin: 1px;
 	padding: 0;
 	box-shadow: 0 0 1px inset white,0 0 1px inset white,0 0 1px inset white;
 }
 .gTabs {
 	position: relative;
 	z-index: 3;
-
 }
 .saveGamesPage_full {
 	display: inherit;
@@ -496,7 +491,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .gameFilePage_full table {
 	box-shadow: 0 0 1px #fff,0 0 1px #fff,0 0 1px #fff;
-	background-color: #172C4B;
+	background-color: #323B37;
 	width:40vw;
 	margin:5vh 30vw;
 	padding: 1px;
@@ -518,12 +513,11 @@ input[type=range]:focus::-ms-fill-upper {
 	background-color: red;
 }
 .gameFilePage_full tr:nth-child(odd) td{
-	background-color: #172C4F;
+	background-color: #222B27;
 }
 .gameFilePage_full tr:nth-child(even) td{
-	background-color: #374C6F;
+	background-color: #424B47;
 }
-
 .indexCodeHolder {
 	position: absolute;
 	bottom: 0;
@@ -565,7 +559,7 @@ html,h1,button,p,div{
 	font-weight: 300;
 }
 .dvContain,.gameFrame,.myScreen, .myScreen_full,.controlPage,.controlPage_full,.gameNav_full,.gameNav,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
-	background-color: #60809F;
+	background-color: #000413;
 	color:white;
 }
 
