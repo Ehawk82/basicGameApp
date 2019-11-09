@@ -56,12 +56,6 @@ var game = {
 			},666);
 		},50);
 	},
-	renderPlanet: function(planet){
-		var gameConsole = bySel(".gameConsole");
-
-
-		console.log(gameConsole.offsetWidth);
-	},
 	tgglNav: function(gameNav,gameNav1) {
 		return function(){
 			if (gameNav.className === "gameNav") {

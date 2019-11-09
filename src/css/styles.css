@@ -539,10 +539,11 @@ input[type=range]:focus::-ms-fill-upper {
 	margin: 1vh 2vw;
 }
 .planet {
-	background-color: red;
+	background-color: transparent;
 	position: absolute;
 	border-radius: 50%;
 	cursor:default;
+	box-shadow: 0 0 1px white, 0 0 2px blue, 0 0 3px lightblue, 0 0 4px white;
 }
 /*ID*/
 

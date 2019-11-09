@@ -57,6 +57,7 @@ gameStuffs = {
 		planet.style.top = (hH - hMw) + "px";
 		planet.style.height = bbb.loadFiles[i].matter + "px";
 		planet.style.width = bbb.loadFiles[i].matter + "px";
+
 	},
 	navAssets: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
 		for (var k = 0; k < navAss.length; k++) {
@@ -119,7 +120,7 @@ gameStuffs = {
 			navBtns.disabled = true;
 			navBtns.innerHTML = "⏳";
 
-			bbb.loadFiles[i].moves++;
+			bbb.loadFiles[i].moves = bbb.loadFiles[i].moves + 2;
 
 			setTimeout(function(){
 				saveLS("bGAuser",bbb);
