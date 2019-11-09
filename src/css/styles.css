@@ -540,6 +540,7 @@ input[type=range]:focus::-ms-fill-upper {
 	background-color: white;
 	position: absolute;
 	border-radius: 50%;
+	cursor:default;
 }
 /*ID*/
 
