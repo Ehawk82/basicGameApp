@@ -101,7 +101,13 @@ var settings = {
 
 				saveGamesPage.append(sgItems)
 			};
+if(bLD_length === 0){
+	var msg = createEle("div");
 
+	msg.innerHTML = "THERE ARE NO SAVED GAMES ON FILE";
+
+	saveGamesPage.append(msg);
+}
 			settContainer.append(saveGamesPage);
 
 			setTimeout(function(){
@@ -195,7 +201,25 @@ var settings = {
 
 				var deleteBtn = bySel("#deleteBtn");
 
-				deleteBtn.onclick = settings.evalDeleteFunc(i,bbb,bLD_length,sgItems,settContainer);
+				deleteBtn.onclick = settings.dltGameWarn(i,bbb,bLD_length,sgItems,settContainer);
+			},0);
+		}
+	},
+	dltGameWarn: function(i,bbb,bLD_length,sgItems,settContainer){
+		return function(){
+			var warnPage = createEle("div"),
+			    dltThis = createEle("button");
+
+			dltThis.innerHTML = "YES";
+			dltThis.className = "deleteBtn";
+			dltThis.onclick = settings.evalDeleteFunc(i,bbb,bLD_length,sgItems,settContainer)
+
+			warnPage.className = "warnPage";
+			warnPage.innerHTML = "<h2>ARE YOU SURE YOU WITH TO DELETE " + bbb.loadFiles[i].name + "?</h2>";
+			warnPage.append(dltThis);
+			settContainer.append(warnPage);
+			setTimeout(function(){
+				makeFull(warnPage);
 			},0);
 		}
 	},
@@ -255,17 +279,13 @@ var settings = {
 		return function(){
 			var warnPage = createEle("div"),
 			    btnHolder = createEle("div"),
-			    yes = createEle("button"),
-			    no = createEle("button");
+			    yes = createEle("button");
 
 			yes.innerHTML = "YES";
 			yes.onclick = settings.clearLS();
 
-			no.innerHTML = "NO";
-			no.onclick = settings.reloadApp();
-
 			btnHolder.className = "btnHolder";
-			btnHolder.append(yes,no);
+			btnHolder.append(yes);
 
 			warnPage.className = "warnPage";
 			warnPage.innerHTML = "<h2>YOU ARE ABOUT TO CLEAR ALL FILE STORAGE FOR THIS APP. PROCEED?</h2>";

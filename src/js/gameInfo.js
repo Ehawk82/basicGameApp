@@ -4,7 +4,7 @@ cTypeName = ["HUMANITY","GREY","PRIDE"];
 rTypeName = ["VEGA","JULE","DARCOS","PLANET YORK","KEPLAR 20B"];
 eTypeName = ["SPIRAL","SOMBRERO","PINWHEEL"];
 
-var navAss = ["🔵","🔧","🧪","➕","🔒","🔒","🔒","🔒"];
+var navAss = ["🔁","🔧","🧪","➕","🔒","🔒","🔒","🔒"];
 var navAss1 = ["🔒","🔒","🔒","🔒","🔒","🔒","🔒","🔒"];
 
 gameStuffs = {

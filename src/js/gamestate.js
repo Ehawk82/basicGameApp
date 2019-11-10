@@ -16,7 +16,7 @@ var game = {
 
 		gameConsole.onload = gameStuffs.assets(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i);
 		gameConsole.className = "gameConsole";
-		gameConsole.style.backgroundImage ="url(src/assets/backgrounds/space" + bbb.loadFiles[i].rType + ".jpg)";
+		gameConsole.style.backgroundImage ="url(src/assets/backgrounds/space" + bbb.loadFiles[i].eType + ".jpg)";
 
 		navToggle.innerHTML = "↔️";
 		navToggle.className = "navToggle";
