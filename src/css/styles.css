@@ -402,6 +402,7 @@ input[type=range]:focus::-ms-fill-upper {
 	height: -webkit-fill-available;
 	display: flex;
     flex-direction: column;
+    z-index: 12;
 }
 .gameNav_full {
 	position: absolute;
@@ -412,6 +413,7 @@ input[type=range]:focus::-ms-fill-upper {
 	height: -webkit-fill-available;
 	display: flex;
     flex-direction: column;
+    z-index: 12;
 	
 }
 .gameFrame {
@@ -543,16 +545,16 @@ input[type=range]:focus::-ms-fill-upper {
 .meteor {
 	background-color: white;
 	position: absolute;
-	width: 10px;
-	height: 10px;
+	width: 1px;
+	height: 1px;
 	left:50%;
 	border-radius: 50%;
 }
 .meteor_left {
 	background-color: grey;
 	position: absolute;
-	width: 2px;
-	height: 2px;
+	width: 10px;
+	height: 10px;
 	left:-100px;
 	border-radius: 50%;
 }
