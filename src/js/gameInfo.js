@@ -198,7 +198,9 @@ gameStuffs = {
 			navBtns.innerHTML = "⏳";
 
 			bbb.loadFiles[i].moves--;
-			//bbb.loadFiles[i].gLevel++;
+			
+			gameStuffs.renderMeteor(gameConsole,bbb,i,k);
+
 			setTimeout(function(){
 				saveLS("bGAuser",bbb);
 				if(bbb.loadFiles[i].moves > 0){
@@ -211,6 +213,28 @@ gameStuffs = {
 				navBtns.innerHTML = navAss[k];
 			},1000);
 		}
+	},
+	renderMeteor: function(gameConsole,planet,bbb,i,k){
+		var meteor = createEle("div"),
+		    rL = gameConsole.offsetHeight,
+		    randLeft = Math.floor(Math.random() * rL);
+
+		meteor.innerHTML = "&nbsp;";
+		meteor.className = "meteor_left";
+		meteor.style.top = randLeft + "px";
+
+		gameConsole.append(meteor);
+
+		setTimeout(function(){
+			meteor.style.top = (rL / 2) + "px";
+			takeLeft(meteor);
+			setTimeout(function(){
+				gameStuffs.meteorCollide(gameConsole,planet,meteor,bbb,i,k);
+			},333);
+		},0);
+	},
+	meteorCollide: function(gameConsole,planet,meteor,bbb,i,k){
+		meteor.remove();
 	},
 	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
 		for (var j = 0; j < navAss1.length; j++) {

@@ -389,7 +389,7 @@ input[type=range]:focus::-ms-fill-upper {
 	display: block;
 }
 .myBar {
-	background-color: #828B87;
+	background-color: #E2EBF7;
 	height: 4px;
 	display: block;
 }
@@ -439,24 +439,24 @@ input[type=range]:focus::-ms-fill-upper {
 .nameholder {
 	width: -webkit-fill-available;
 	display: flex;
+	margin-top: 1px;
 }
 .nameIn, .cTypeHolder, .rTypeHolder,.eTypeHolder {
 	width:-webkit-fill-available;
 	text-align: center;
 	display: grid;
-	margin: 0;
+	margin: 0 1px;
 	padding: 8px 0;
-	background-color: #323B37;
+	background-color: rgba(100,100,110,0.2);
 	font-size: 10px;
 	cursor: default;
-	box-shadow: 0 0 1px #fff inset;
+	box-shadow: 0 0 1px #000 inset,0 0 1px #000 inset;
 }
 .navBtns {
 	height: -webkit-fill-available;
 	width: -webkit-fill-available;
-	margin: 1px;
+	margin-top: 1px;
 	padding: 0;
-	box-shadow: 0 0 1px inset white,0 0 1px inset white,0 0 1px inset white;
 }
 .gTabs {
 	position: relative;
@@ -540,6 +540,22 @@ input[type=range]:focus::-ms-fill-upper {
 	cursor:default;
 	box-shadow: 0 0 1px white, 0 0 2px blue, 0 0 3px lightblue, 0 0 4px white;
 }
+.meteor {
+	background-color: white;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	left:50%;
+	border-radius: 50%;
+}
+.meteor_left {
+	background-color: grey;
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	left:-100px;
+	border-radius: 50%;
+}
 /*ID*/
 
 /*MULTIS*/
@@ -563,7 +579,6 @@ html,h1,button,p,div{
 	background-color: #000413;
 	color:white;
 }
-
 .startBtns {
 	-webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -572,10 +587,9 @@ html,h1,button,p,div{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
 }
-.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
+.meteor,.meteor_left,.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
 	transition: 333ms all ease-in-out;
 }
-
 .devLog, .settContainer, .loadContainer, .newGameContainer {
 	margin-top: 2px;
 }
