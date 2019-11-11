@@ -4,6 +4,12 @@ html {
     font-weight: 800;
 	text-shadow: -1px 1px 1px #111,-1px 1px 1px #111,-1px 1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px -1px 1px #111,1px -1px 1px #111,1px -1px 1px #111;
 	letter-spacing: 3px;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 }
 body {
 	height:100vh;
@@ -581,14 +587,7 @@ html,h1,button,p,div{
 	background-color: #000413;
 	color:white;
 }
-.startBtns {
-	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none;
-}
+
 .meteor,.meteor_left,.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
 	transition: 333ms all ease-in-out;
 }

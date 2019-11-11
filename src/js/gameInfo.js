@@ -198,8 +198,8 @@ gameStuffs = {
 			navBtns.innerHTML = "⏳";
 
 			bbb.loadFiles[i].moves--;
-			
-			gameStuffs.renderMeteor(gameConsole,bbb,i,k);
+			var planet = bySel(".planet");
+			gameStuffs.renderMeteor(gameConsole,planet,bbb,i,k);
 
 			setTimeout(function(){
 				saveLS("bGAuser",bbb);
@@ -217,14 +217,16 @@ gameStuffs = {
 	renderMeteor: function(gameConsole,planet,bbb,i,k){
 		var meteor = createEle("div"),
 		    rL = gameConsole.offsetHeight,
-		    randLeft = Math.floor(Math.random() * rL);
+		    pL = planet.offsetHeight,
+		    randLeft = Math.floor(Math.random() * rL),
+		    operatorBool = Math.floor(Math.random() * 2);
 
 		meteor.innerHTML = "&nbsp;";
 		meteor.className = "meteor_left";
 		meteor.style.top = randLeft + "px";
 
 		gameConsole.append(meteor);
-
+console.log(operatorBool);
 		setTimeout(function(){
 			meteor.style.top = (rL / 2) + "px";
 			takeLeft(meteor);
