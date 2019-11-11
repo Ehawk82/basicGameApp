@@ -120,7 +120,7 @@ gameStuffs = {
 			navBtns.disabled = true;
 			navBtns.innerHTML = "⏳";
 
-			bbb.loadFiles[i].moves = bbb.loadFiles[i].moves + bbb.level;
+			bbb.loadFiles[i].moves = bbb.loadFiles[i].moves + bbb.loadFiles[i].gLevel;
 
 			setTimeout(function(){
 				saveLS("bGAuser",bbb);
@@ -198,7 +198,7 @@ gameStuffs = {
 			navBtns.innerHTML = "⏳";
 
 			if(bbb.loadFiles[i].matter === 10 || bbb.loadFiles[i].matter === 20 || bbb.loadFiles[i].matter === 30 || bbb.loadFiles[i].matter === 40 || bbb.loadFiles[i].matter === 50 || bbb.loadFiles[i].matter === 60 || bbb.loadFiles[i].matter === 70 || bbb.loadFiles[i].matter === 80 || bbb.loadFiles[i].matter === 90 || bbb.loadFiles[i].matter === 100){
-				bbb.level++;
+				bbb.loadFiles[i].gLevel++;
 			}
 
 			bbb.loadFiles[i].moves--;
@@ -267,7 +267,9 @@ gameStuffs = {
 		setTimeout(function(){
 			addHeights(o);
 			addWidths(m);
-			bbb.loadFiles[i].matter++;
+			if(bbb.loadFiles[i].matter < 500){ 
+				bbb.loadFiles[i].matter++;
+			}
 			takeLeft(meteor);
 			setTimeout(function(){
 				saveLS("bGAuser",bbb);

@@ -436,9 +436,9 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .gameConsole {
 	position: absolute;
-	background-size: auto 100%;
+	background-size: 100% auto;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: top-left;
 	display: block;
 	height: -webkit-fill-available;
 	width: 90vw;
