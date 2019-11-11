@@ -197,6 +197,10 @@ gameStuffs = {
 			navBtns.disabled = true;
 			navBtns.innerHTML = "⏳";
 
+			if(bbb.loadFiles[i].matter === 10 || bbb.loadFiles[i].matter === 20 || bbb.loadFiles[i].matter === 30 || bbb.loadFiles[i].matter === 40 || bbb.loadFiles[i].matter === 50 || bbb.loadFiles[i].matter === 60 || bbb.loadFiles[i].matter === 70 || bbb.loadFiles[i].matter === 80 || bbb.loadFiles[i].matter === 90 || bbb.loadFiles[i].matter === 100){
+				bbb.level++;
+			}
+
 			bbb.loadFiles[i].moves--;
 			var planet = bySel(".planet");
 			gameStuffs.renderMeteor(gameConsole,planet,bbb,i,k);
@@ -216,23 +220,62 @@ gameStuffs = {
 	},
 	renderMeteor: function(gameConsole,planet,bbb,i,k){
 		var meteor = createEle("div"),
-		    rL = gameConsole.offsetHeight,
+		    rH = gameConsole.offsetHeight,
+		    rL = gameConsole.offsetWidth,
 		    pL = planet.offsetHeight,
+		    randTop = Math.floor(Math.random() * rH),
 		    randLeft = Math.floor(Math.random() * rL),
-		    operatorBool = Math.floor(Math.random() * 2);
+		    randPlanet = Math.floor(Math.random() * pL),
+		    operatorBool = Math.floor(Math.random() * 2),operatorBool2 = Math.floor(Math.random() * 2),op,mp;
 
 		meteor.innerHTML = "&nbsp;";
 		meteor.className = "meteor_left";
-		meteor.style.top = randLeft + "px";
-
+		meteor.style.top = randTop + "px";
+		if(operatorBool === 0){
+			op = "-";
+		}else{
+			op = "+";
+		}
+		if(operatorBool2 === 0){
+			mp = "-";
+		}else{
+			mp = "+";
+		}
+		var opval = (rH / 2) + op + (randPlanet / 3.14);
+		var mpval = (rL / 2) + mp + (randPlanet / 3.14);
 		gameConsole.append(meteor);
-console.log(operatorBool);
+
+		function addHeights(s){
+		    var total= 0, s= s.match(/[+\-]*(\.\d+|\d+(\.\d+)?)/g) || [];
+		    while(s.length){
+		        total+= parseFloat(s.shift());
+		    }
+		    return total,meteor.style.top = total + "px";
+
+		}
+		function addWidths(t){
+		    var total= 0, t= t.match(/[+\-]*(\.\d+|\d+(\.\d+)?)/g) || [];
+		    while(t.length){
+		        total+= parseFloat(t.shift());
+		    }
+		    return total,meteor.style.left = total + "px";
+
+		}
+		var o = opval.toString();
+		var m = mpval.toString();
+
 		setTimeout(function(){
-			meteor.style.top = (rL / 2) + "px";
+			addHeights(o);
+			addWidths(m);
+			bbb.loadFiles[i].matter++;
 			takeLeft(meteor);
 			setTimeout(function(){
+				saveLS("bGAuser",bbb);
+				gameStuffs.renderPlanet(planet,i);
+			},300);
+			setTimeout(function(){
 				gameStuffs.meteorCollide(gameConsole,planet,meteor,bbb,i,k);
-			},333);
+			},666);
 		},0);
 	},
 	meteorCollide: function(gameConsole,planet,meteor,bbb,i,k){

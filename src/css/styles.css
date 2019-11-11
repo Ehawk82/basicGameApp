@@ -542,7 +542,7 @@ input[type=range]:focus::-ms-fill-upper {
 	margin: 1vh 2vw;
 }
 .planet {
-	background-color: transparent;
+	background-color: grey;
 	position: absolute;
 	border-radius: 50%;
 	cursor:default;
@@ -551,10 +551,11 @@ input[type=range]:focus::-ms-fill-upper {
 .meteor {
 	background-color: white;
 	position: absolute;
-	width: 1px;
-	height: 1px;
+	width: 2px;
+	height: 2px;
 	left:50%;
 	border-radius: 50%;
+	box-shadow: 0 0 1px lightblue, 0 0 1px lightblue, 0 0 1px lightblue, 0 0 1px lightblue;
 }
 .meteor_left {
 	background-color: grey;
@@ -563,6 +564,7 @@ input[type=range]:focus::-ms-fill-upper {
 	height: 10px;
 	left:-100px;
 	border-radius: 50%;
+	box-shadow: 0 0 1px transparent, 0 0 2px transparent, 0 0 3px transparent, 0 0 4px transparent;
 }
 /*ID*/
 
@@ -588,7 +590,7 @@ html,h1,button,p,div{
 	color:white;
 }
 
-.meteor,.meteor_left,.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
+.planet,.meteor,.meteor_left,.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
 	transition: 333ms all ease-in-out;
 }
 .devLog, .settContainer, .loadContainer, .newGameContainer {
