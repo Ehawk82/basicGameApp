@@ -89,7 +89,7 @@ var newGameProgram = {
 				cType: ctc[1],
 				rType: rtr[1],
 				eType: ete[1],
-				matter: 1,
+				matter: 499,
 				life: 0,
 				timestamp: ts,
 				medals: 0,

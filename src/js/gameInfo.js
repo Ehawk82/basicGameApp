@@ -59,19 +59,19 @@ gameStuffs = {
 			hMh = bbb.loadFiles[i].matter / 2;
 
 		if(rt === "1"){
-			clr = "#22606E";
+			clr = "rgba(135,206,235,0.2)";
 		}
 		if(rt === "2"){
-			clr = "#634F1F";
+			clr = "rgba(255,152,0,0.2)";
 		}
 		if(rt === "3"){
-			clr = "#302E66";
+			clr = "rgba(156,39,176,0.2)";
 		}
 		if(rt === "4"){
-			clr = "#626E22";
+			clr = "rgba(255,235,59,0.2)";
 		}
 		if(rt === "5"){
-			clr = "#1F572D";
+			clr = "rgba(20,80,25,0.2)";
 		}
 		console.log(rt);
 		console.log(clr);
