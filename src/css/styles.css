@@ -436,7 +436,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .gameConsole {
 	position: absolute;
-	background-size: 100% auto;
+	background-size: auto 100% ;
 	background-repeat: no-repeat;
 	background-position: top-left;
 	display: block;
@@ -542,7 +542,6 @@ input[type=range]:focus::-ms-fill-upper {
 	margin: 1vh 2vw;
 }
 .planet {
-	background-color: grey;
 	position: absolute;
 	border-radius: 50%;
 	cursor:default;

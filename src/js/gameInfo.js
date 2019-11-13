@@ -45,7 +45,8 @@ gameStuffs = {
 		},100);
 	},
 	renderPlanet: function(planet,i){
-		var bbb = parseLS("bGAuser");
+		var bbb = parseLS("bGAuser"),
+		    rt = bbb.loadFiles[i].rType, clr;
 
 		var gameConsole = bySel(".gameConsole"),
 			hW = gameConsole.offsetWidth / 2,
@@ -53,6 +54,24 @@ gameStuffs = {
 			hH = gameConsole.offsetHeight / 2,
 			hMh = bbb.loadFiles[i].matter / 2;
 
+		if(rt === "1"){
+			clr = "#22606E";
+		}
+		if(rt === "2"){
+			clr = "#634F1F";
+		}
+		if(rt === "3"){
+			clr = "#302E66";
+		}
+		if(rt === "4"){
+			clr = "#626E22";
+		}
+		if(rt === "5"){
+			clr = "#1F572D";
+		}
+		console.log(rt);
+		console.log(clr);
+		planet.style.backgroundColor = clr;
 		planet.style.left = (hW - hMw) + "px";
 		planet.style.top = (hH - hMw) + "px";
 		planet.style.height = bbb.loadFiles[i].matter + "px";
