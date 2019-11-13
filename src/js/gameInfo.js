@@ -17,7 +17,8 @@ gameStuffs = {
 		    ctype = bbb.loadFiles[i].cType,
 		    rtype = bbb.loadFiles[i].rType,
 		    etype = bbb.loadFiles[i].eType,
-		    c = (+ctype - 1),r = (+rtype - 1),e = (+etype - 1);
+		    c = (+ctype - 1),r = (+rtype - 1),e = (+etype - 1),
+		    lvlHolder = createEle("div");
 
 		var planet = createEle("div");
 
@@ -33,10 +34,13 @@ gameStuffs = {
 		eTypeHolder.innerHTML = eTypeName[e];
 		eTypeHolder.className = "eTypeHolder";
 
+		lvlHolder.innerHTML = bbb.loadFiles[i].gLevel;
+		lvlHolder.className = "lvlHolder"; 
+
 		nameIn.innerHTML = bbb.loadFiles[i].name;
 		nameIn.className = "nameIn";
 
-		nameholder.append(nameIn,cTypeHolder,rTypeHolder,eTypeHolder);
+		nameholder.append(nameIn,cTypeHolder,rTypeHolder,eTypeHolder,lvlHolder);
 		nameholder.className = "nameholder";
 
 		gameConsole.append(nameholder,planet);
@@ -212,12 +216,14 @@ gameStuffs = {
 	},
 	addition: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k) {
 		return function(){
-			var cycleBtn = bySel("#cycleBtn");
+			var cycleBtn = bySel("#cycleBtn"),
+				lvlHolder = bySel(".lvlHolder");
 			navBtns.disabled = true;
 			navBtns.innerHTML = "⏳";
 
 			if(bbb.loadFiles[i].matter === 10 || bbb.loadFiles[i].matter === 20 || bbb.loadFiles[i].matter === 30 || bbb.loadFiles[i].matter === 40 || bbb.loadFiles[i].matter === 50 || bbb.loadFiles[i].matter === 60 || bbb.loadFiles[i].matter === 70 || bbb.loadFiles[i].matter === 80 || bbb.loadFiles[i].matter === 90 || bbb.loadFiles[i].matter === 100){
 				bbb.loadFiles[i].gLevel++;
+		        lvlHolder.innerHTML = "Level: " + bbb.loadFiles[i].gLevel;
 			}
 
 			bbb.loadFiles[i].moves--;
@@ -262,7 +268,6 @@ gameStuffs = {
 		}
 		var opval = (rH / 2) + op + (randPlanet / 3.14);
 		var mpval = (rL / 2) + mp + (randPlanet / 3.14);
-		gameConsole.append(meteor);
 
 		function addHeights(s){
 		    var total= 0, s= s.match(/[+\-]*(\.\d+|\d+(\.\d+)?)/g) || [];

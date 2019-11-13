@@ -31,21 +31,23 @@ h1 {
 	text-indent: 4px;
 }
 button {
-	background-color: #323B47;
+	background-color: #101423;
 	border:none;
 	outline: none;
 	letter-spacing: 3px;
+	border-radius: 2px;
+	box-shadow: 0 0 1px #FFF,0 0 1px #FFF,0 0 1px #FFF;
 	color:white;
 	text-shadow: -1px 1px 1px #111,-1px 1px 1px #111,-1px -1px 1px #111,-1px -1px 1px #111,1px 1px 1px #111,1px 1px 1px #111,1px -1px 1px #111,1px -1px 1px #111;
 }
 button:hover {
-	background-color: #424B57;
+	background-color: #202433;
 }
 button:active {
-	background-color: #121B27;
+	background-color: #000413;
 }
 button:disabled {
-	background-color: #424B57;
+	background-color: #202433;
 	opacity: 0.2;
 }
 ::selection {
@@ -328,6 +330,8 @@ input[type=range]:focus::-ms-fill-upper {
 .container div div {
 }
 .loadBox div {
+	border-radius: 2px;
+	box-shadow: 0 0 1px #FFF,0 0 1px #FFF,0 0 1px #FFF;
 	display: inline-block;
 	width:120px;
 	height:120px;
@@ -335,7 +339,7 @@ input[type=range]:focus::-ms-fill-upper {
 	margin: 5px;
 	padding:0;
 	cursor: pointer;
-	background-color:  #323B37;
+	background-color:  #101423;
 	color:#fff;
 	text-align: center;
 	overflow: hidden;
@@ -343,7 +347,7 @@ input[type=range]:focus::-ms-fill-upper {
 .loadBox div span {
 }
 .loadBox div:hover {
-	background-color: #424B47;
+	background-color: #202433;
 }
 .ngBtn {
 
@@ -436,7 +440,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .gameConsole {
 	position: absolute;
-	background-size: auto 100% ;
+	background-size: 100% 100% ;
 	background-repeat: no-repeat;
 	background-position: top-left;
 	display: block;
@@ -449,14 +453,14 @@ input[type=range]:focus::-ms-fill-upper {
 	display: flex;
 	margin-top: 1px;
 }
-.nameIn, .cTypeHolder, .rTypeHolder,.eTypeHolder {
+.nameIn, .cTypeHolder, .rTypeHolder,.eTypeHolder,.lvlHolder {
 	width:-webkit-fill-available;
 	text-align: center;
 	display: grid;
 	margin: 0 1px;
 	padding: 8px 0;
-	background-color: rgba(100,100,110,0.2);
-	font-size: 10px;
+	background-color: rgba(60,60,70,0.9);
+	font-size: 14px;
 	cursor: default;
 	box-shadow: 0 0 1px #000 inset,0 0 1px #000 inset;
 }
@@ -480,11 +484,12 @@ input[type=range]:focus::-ms-fill-upper {
 	width: 8vw;
 	margin: 3px;
 	line-height: 6vh;
-	box-shadow: 0 0 1px darkgrey;
+	border-radius: 2px;
+	box-shadow: 0 0 1px #FFF,0 0 1px #FFF,0 0 1px #FFF;
 	text-align: center;
 }
 .saveGamesPage_full p:hover {
-	background: rgba(85,85,85,1);
+	background: #202433;
 }
 .gameFilePage {
 	background-color: black;
@@ -499,8 +504,9 @@ input[type=range]:focus::-ms-fill-upper {
 	width:100vw;
 }
 .gameFilePage_full table {
-	box-shadow: 0 0 1px #fff,0 0 1px #fff,0 0 1px #fff;
-	background-color: #323B37;
+	box-shadow: 0 0 1px #FFF,0 0 1px #FFF,0 0 1px #FFF;
+	background-color: #000413;
+	border-radius: 2px;
 	width:40vw;
 	margin:5vh 30vw;
 	padding: 1px;
@@ -522,10 +528,10 @@ input[type=range]:focus::-ms-fill-upper {
 	background-color: red;
 }
 .gameFilePage_full tr:nth-child(odd) td{
-	background-color: #222B27;
+	background-color: #101423;
 }
 .gameFilePage_full tr:nth-child(even) td{
-	background-color: #424B47;
+	background-color: #000413;
 }
 .indexCodeHolder {
 	position: absolute;
