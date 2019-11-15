@@ -89,7 +89,7 @@ var newGameProgram = {
 				cType: ctc[1],
 				rType: rtr[1],
 				eType: ete[1],
-				matter: 499,
+				matter: 190,
 				life: 0,
 				timestamp: ts,
 				medals: 0,
@@ -99,10 +99,10 @@ var newGameProgram = {
 				items: {},
 				terra: 1,
 				water: 0,
-				atmos: 0,
+				atmos: 0.5,
 				satelites: 0,
 				gold: 0,
-				moves: 1,
+				moves: 10,
 				gLevel: 1
 			};
 

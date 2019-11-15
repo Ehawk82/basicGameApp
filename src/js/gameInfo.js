@@ -20,10 +20,14 @@ gameStuffs = {
 		    c = (+ctype - 1),r = (+rtype - 1),e = (+etype - 1),
 		    lvlHolder = createEle("div");
 
-		var planet = createEle("div");
+		var planet = createEle("div"),
+			terra = createEle("div");
 
-		planet.innerHTML = "&nbsp;";
+		terra.innerHTML = "&nbsp;";
+		terra.className = "terra";
+
 		planet.className = "planet";
+		planet.append(terra);
 
 		cTypeHolder.innerHTML = cTypeName[c];
 		cTypeHolder.className = "cTypeHolder";
@@ -50,7 +54,8 @@ gameStuffs = {
 	},
 	renderPlanet: function(planet,i){
 		var bbb = parseLS("bGAuser"),
-		    rt = bbb.loadFiles[i].rType, clr;
+		    rt = bbb.loadFiles[i].rType, clr,
+		    atm = bbb.loadFiles[i].atmos;
 
 		var gameConsole = bySel(".gameConsole"),
 			hW = gameConsole.offsetWidth / 2,
@@ -59,25 +64,25 @@ gameStuffs = {
 			hMh = bbb.loadFiles[i].matter / 2;
 
 		if(rt === "1"){
-			clr = "rgba(135,206,235,0.2)";
+			clr = "rgba(135,206,235," + atm + ")";
 		}
 		if(rt === "2"){
-			clr = "rgba(255,152,0,0.2)";
+			clr = "rgba(255,152,0," + atm + ")";
 		}
 		if(rt === "3"){
-			clr = "rgba(156,39,176,0.2)";
+			clr = "rgba(156,39,176," + atm + ")";
 		}
 		if(rt === "4"){
-			clr = "rgba(255,235,59,0.2)";
+			clr = "rgba(255,235,59," + atm + ")";
 		}
 		if(rt === "5"){
-			clr = "rgba(20,80,25,0.2)";
+			clr = "rgba(20,80,25," + atm + ")";
 		}
-		console.log(rt);
-		console.log(clr);
+
 		planet.style.backgroundColor = clr;
 		planet.style.left = (hW - hMw) + "px";
 		planet.style.top = (hH - hMw) + "px";
+		planet.style.boxShadow = "0 0 1px rgba(255,255,255," + atm + "), 0 0 2px rgba(255,255,255," + atm + "), 0 0 3px rgba(255,255,255," + atm + "), 0 0 4px rgba(255,255,255," + atm + ")";
 		planet.style.height = bbb.loadFiles[i].matter + "px";
 		planet.style.width = bbb.loadFiles[i].matter + "px";
 
@@ -287,7 +292,7 @@ gameStuffs = {
 		}
 		var o = opval.toString();
 		var m = mpval.toString();
-
+		gameConsole.append(meteor);
 		setTimeout(function(){
 			addHeights(o);
 			addWidths(m);
@@ -295,17 +300,18 @@ gameStuffs = {
 				bbb.loadFiles[i].matter++;
 			}
 			takeLeft(meteor);
+
 			setTimeout(function(){
 				saveLS("bGAuser",bbb);
 				gameStuffs.renderPlanet(planet,i);
-			},300);
-			setTimeout(function(){
 				gameStuffs.meteorCollide(gameConsole,planet,meteor,bbb,i,k);
 			},666);
-		},0);
+		},1);
 	},
 	meteorCollide: function(gameConsole,planet,meteor,bbb,i,k){
-		meteor.remove();
+		setTimeout(function(){
+			meteor.remove();
+		},333);
 	},
 	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
 		for (var j = 0; j < navAss1.length; j++) {
