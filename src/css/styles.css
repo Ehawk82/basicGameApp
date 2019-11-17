@@ -565,6 +565,8 @@ input[type=range]:focus::-ms-fill-upper {
     background-image: url("../assets/backgrounds/terra.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    box-shadow:inset  .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000; 
+
 }
 .land {
     position: relative;
@@ -585,7 +587,7 @@ input[type=range]:focus::-ms-fill-upper {
     border-radius: 50%;
     margin: 0;
     display: block;
-    box-shadow:inset  .1em .2em .4em .1em #000000, inset .1em .2em .4em .1em #000000, inset .1em .2em .4em .1em #000000; 
+    box-shadow:inset  .05em .3em .4em .05em #000000, inset .05em .3em .4em .05em #000000, inset .05em .3em .4em .05em #000000; 
 
 }
 .oceans {
@@ -611,7 +613,7 @@ input[type=range]:focus::-ms-fill-upper {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     opacity:0.3;
-    box-shadow:inset  .2em .3em 2em .2em #000000, inset .2em .3em 2em .2em #000000, inset .2em .3em 2em .2em #000000; 
+    box-shadow:inset  .1em .3em 2em .1em #000000, inset .1em .3em 2em .1em #000000, inset .1em .3em 2em .1em #000000; 
 
  }
 .meteor {

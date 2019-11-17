@@ -64,13 +64,22 @@ gameStuffs = {
 
 		gameConsole.append(nameholder,planet);
 		setTimeout(function(){
-			gameConsole.onload = gameStuffs.renderPlanet(planet,i,terra,oceans,land,atmos2);
+			gameConsole.onload = gameStuffs.renderPlanet(planet,i);
+			window.onresize = function(){ return gameStuffs.renderPlanet(planet,i) };
 		},100);
 	},
-	renderPlanet: function(planet,i,terra,oceans,land,atmos2){
+	renderPlanet: function(planet,i){
 		var bbb = parseLS("bGAuser"),
 		    rt = bbb.loadFiles[i].rType, clr,
-		    atm = bbb.loadFiles[i].atmos;
+		    lnd = bbb.loadFiles[i].land,
+		    ocn = bbb.loadFiles[i].ocean,
+		    cld = bbb.loadFiles[i].cloud,
+		    atm = bbb.loadFiles[i].atmos,
+		    terra = bySel(".terra"),
+		    oceans = bySel(".oceans"),
+		    land = bySel(".land"),
+		    clouds = bySel(".clouds"),
+		    atmos2 = bySel(".atmos");
 
 		var gameConsole = bySel(".gameConsole"),
 			hW = gameConsole.offsetWidth / 2,
@@ -100,6 +109,13 @@ gameStuffs = {
 		planet.style.boxShadow = "0 0 1px rgba(255,255,255," + atm + "), 0 0 2px rgba(255,255,255," + atm + "), 0 0 3px rgba(255,255,255," + atm + "), 0 0 4px rgba(255,255,255," + atm + ")";
 		planet.style.height = bbb.loadFiles[i].matter + "px";
 		planet.style.width = bbb.loadFiles[i].matter + "px";
+
+
+		land.style.opacity = lnd;
+
+		oceans.style.opacity = ocn;
+
+		clouds.style.opacity = cld;
 
 		atmos2.style.backgroundColor = clr;
 
@@ -262,7 +278,7 @@ gameStuffs = {
 					cycleBtn.disabled = false;
 				}
 				navBtns.innerHTML = navAss[k];
-			},1000);
+			},2333);
 		}
 	},
 	renderMeteor: function(gameConsole,planet,bbb,i,k){
@@ -327,6 +343,7 @@ gameStuffs = {
 	},
 	meteorCollide: function(gameConsole,planet,meteor,bbb,i,k){
 		setTimeout(function(){
+			console.log(meteor);
 			meteor.remove();
 		},100);
 	},
