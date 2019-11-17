@@ -554,16 +554,66 @@ input[type=range]:focus::-ms-fill-upper {
 	z-index: 5;
 	padding: 5px;
 }
+
 .terra {
-	background-color: grey;
     position: relative;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
     border-radius: 50%;
     margin: 0;
     display: block;
-    background: radial-gradient(ellipse at left, rgba(100,100,100,1) 0,rgba(20,20,20,1) 75%,rgba(10,10,10,1) 100%);
+    background-image: url("../assets/backgrounds/terra.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
+.land {
+    position: relative;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    border-radius: 50%;
+    margin: 0;
+    display: block;
+    background-image: url("../assets/backgrounds/land.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    box-shadow:inset  .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000; 
+}
+.atmos {
+	position: relative;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    border-radius: 50%;
+    margin: 0;
+    display: block;
+    box-shadow:inset  .1em .2em .4em .1em #000000, inset .1em .2em .4em .1em #000000, inset .1em .2em .4em .1em #000000; 
+
+}
+.oceans {
+    position: relative;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    border-radius: 50%;
+    margin: 0;
+    display: block;
+    background-image: url("../assets/backgrounds/ocean.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    box-shadow:inset  .8em 1.6em 3.2em .8em #000000, inset .8em 1.6em 3.2em .8em #000000, inset .8em 1.6em 3.2em .8em #000000; 
+}
+.clouds {
+    position: relative;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    border-radius: 50%;
+    margin: 0;
+    display: block;
+    background-image: url("../assets/backgrounds/clouds.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity:0.3;
+    box-shadow:inset  .2em .3em 2em .2em #000000, inset .2em .3em 2em .2em #000000, inset .2em .3em 2em .2em #000000; 
+
+ }
 .meteor {
 	background-color: white;
 	position: absolute;
@@ -576,8 +626,8 @@ input[type=range]:focus::-ms-fill-upper {
 .meteor_left {
 	background-color: white;
 	position: absolute;
-	width: 20px;
-	height: 20px;
+	width: 100px;
+	height: 100px;
 	left:-100px;
 	border-radius: 50%;
 	box-shadow: 0 0 4px lightblue, 0 0 4px lightblue, 0 0 4px lightblue, 0 0 4px lightblue;
@@ -607,8 +657,11 @@ html,h1,button,p,div{
 	color:white;
 }
 
-.planet,.meteor,.meteor_left,.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
+.planet,.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
 	transition: 333ms all ease-in-out;
+}
+.meteor,.meteor_left {
+	transition: 2000ms all ease-in;
 }
 .devLog, .settContainer, .loadContainer, .newGameContainer {
 	margin-top: 2px;

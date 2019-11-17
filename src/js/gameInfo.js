@@ -21,10 +21,25 @@ gameStuffs = {
 		    lvlHolder = createEle("div");
 
 		var planet = createEle("div"),
-			terra = createEle("div");
+			terra = createEle("div"),
+			land = createEle("div"),
+			oceans = createEle("div"),
+			atmos2 = createEle("div"),
+			clouds = createEle("div");
 
-		terra.innerHTML = "&nbsp;";
+		clouds.className = "clouds";
+
+		atmos2.className = "atmos";
+		atmos2.append(clouds);
+
+		land.className = "land";
+		land.append(atmos2);
+
+		oceans.className = "oceans";
+		oceans.append(land);
+
 		terra.className = "terra";
+		terra.append(oceans);
 
 		planet.className = "planet";
 		planet.append(terra);
@@ -49,10 +64,10 @@ gameStuffs = {
 
 		gameConsole.append(nameholder,planet);
 		setTimeout(function(){
-			gameConsole.onload = gameStuffs.renderPlanet(planet,i);
+			gameConsole.onload = gameStuffs.renderPlanet(planet,i,terra,oceans,land,atmos2);
 		},100);
 	},
-	renderPlanet: function(planet,i){
+	renderPlanet: function(planet,i,terra,oceans,land,atmos2){
 		var bbb = parseLS("bGAuser"),
 		    rt = bbb.loadFiles[i].rType, clr,
 		    atm = bbb.loadFiles[i].atmos;
@@ -85,6 +100,8 @@ gameStuffs = {
 		planet.style.boxShadow = "0 0 1px rgba(255,255,255," + atm + "), 0 0 2px rgba(255,255,255," + atm + "), 0 0 3px rgba(255,255,255," + atm + "), 0 0 4px rgba(255,255,255," + atm + ")";
 		planet.style.height = bbb.loadFiles[i].matter + "px";
 		planet.style.width = bbb.loadFiles[i].matter + "px";
+
+		atmos2.style.backgroundColor = clr;
 
 	},
 	navAssets: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
@@ -305,13 +322,13 @@ gameStuffs = {
 				saveLS("bGAuser",bbb);
 				gameStuffs.renderPlanet(planet,i);
 				gameStuffs.meteorCollide(gameConsole,planet,meteor,bbb,i,k);
-			},666);
+			},2000);
 		},1);
 	},
 	meteorCollide: function(gameConsole,planet,meteor,bbb,i,k){
 		setTimeout(function(){
 			meteor.remove();
-		},333);
+		},100);
 	},
 	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
 		for (var j = 0; j < navAss1.length; j++) {
