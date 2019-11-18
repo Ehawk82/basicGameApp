@@ -90,15 +90,19 @@ gameStuffs = {
 		if(rt === "1"){
 			clr = "rgba(135,206,235," + atm + ")";
 		}
+		
 		if(rt === "2"){
 			clr = "rgba(255,152,0," + atm + ")";
 		}
+
 		if(rt === "3"){
 			clr = "rgba(156,39,176," + atm + ")";
 		}
+
 		if(rt === "4"){
 			clr = "rgba(255,235,59," + atm + ")";
 		}
+
 		if(rt === "5"){
 			clr = "rgba(20,80,25," + atm + ")";
 		}
@@ -109,7 +113,6 @@ gameStuffs = {
 		planet.style.boxShadow = "0 0 1px rgba(255,255,255," + atm + "), 0 0 2px rgba(255,255,255," + atm + "), 0 0 3px rgba(255,255,255," + atm + "), 0 0 4px rgba(255,255,255," + atm + ")";
 		planet.style.height = bbb.loadFiles[i].matter + "px";
 		planet.style.width = bbb.loadFiles[i].matter + "px";
-
 
 		land.style.opacity = lnd;
 
@@ -127,6 +130,9 @@ gameStuffs = {
 			navBtns.className = "navBtns";
 			navBtns.innerHTML = navAss[k];
 
+			var moveCount = createEle("span");
+			moveCount.innerHTML = bbb.loadFiles[i].moves;
+
 			if(k === 0) {
 				navBtns.id = "cycleBtn";
 				if(bbb.loadFiles[i].moves === 0){
@@ -134,7 +140,7 @@ gameStuffs = {
 				} else {
 					navBtns.disabled = true;
 				}
-				navBtns.onclick = gameStuffs.cycle(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k);
+				navBtns.onclick = gameStuffs.cycle(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k,moveCount);
 			}
 
 			if(k === 1) {
@@ -149,12 +155,14 @@ gameStuffs = {
 
 			if(k === 3) {
 				navBtns.id = "addBtn";
+				navBtns.append(moveCount);
+				
 				if(bbb.loadFiles[i].moves > 0){
 					navBtns.disabled = false;
 				} else {
 					navBtns.disabled = true;
 				}
-				navBtns.onclick = gameStuffs.addition(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k);
+				navBtns.onclick = gameStuffs.addition(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k,moveCount);
 			}
 			if(k === 4) {
 				navBtns.disabled = true;
@@ -175,14 +183,16 @@ gameStuffs = {
 			gameNav.append(navBtns);
 		}
 	},
-	cycle: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k) {
+	cycle: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k,moveCount) {
 		return function(){
+			var bbb = parseLS("bGAuser");
+
 			var addBtn = bySel("#addBtn");
 			navBtns.disabled = true;
 			navBtns.innerHTML = "⏳";
 
-			bbb.loadFiles[i].moves = bbb.loadFiles[i].moves + bbb.loadFiles[i].gLevel;
-
+			bbb.loadFiles[i].moves = bbb.loadFiles[i].gLevel;
+			
 			setTimeout(function(){
 				saveLS("bGAuser",bbb);
 				if(bbb.loadFiles[i].moves === 0){
@@ -192,7 +202,9 @@ gameStuffs = {
 					navBtns.disabled = true;
 					addBtn.disabled = false;
 				}
+				moveCount.innerHTML = bbb.loadFiles[i].moves;
 				navBtns.innerHTML = navAss[k];
+				addBtn.innerHTML = navAss[3] + "<span>" + moveCount.innerHTML + "</span>";
 			},1000);
 		}
 	},
@@ -252,8 +264,9 @@ gameStuffs = {
 			},666);
 		}
 	},
-	addition: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k) {
+	addition: function(navBtns,container,gameNav,gameNav1,navToggle,gameConsole,bbb,i,k,moveCount) {
 		return function(){
+			var bbb = parseLS("bGAuser");
 			var cycleBtn = bySel("#cycleBtn"),
 				lvlHolder = bySel(".lvlHolder");
 			navBtns.disabled = true;
@@ -261,10 +274,11 @@ gameStuffs = {
 
 			if(bbb.loadFiles[i].matter === 10 || bbb.loadFiles[i].matter === 20 || bbb.loadFiles[i].matter === 30 || bbb.loadFiles[i].matter === 40 || bbb.loadFiles[i].matter === 50 || bbb.loadFiles[i].matter === 60 || bbb.loadFiles[i].matter === 70 || bbb.loadFiles[i].matter === 80 || bbb.loadFiles[i].matter === 90 || bbb.loadFiles[i].matter === 100){
 				bbb.loadFiles[i].gLevel++;
-		        lvlHolder.innerHTML = "Level: " + bbb.loadFiles[i].gLevel;
+		        lvlHolder.innerHTML = bbb.loadFiles[i].gLevel;
 			}
-
+			
 			bbb.loadFiles[i].moves--;
+
 			var planet = bySel(".planet");
 			gameStuffs.renderMeteor(gameConsole,planet,bbb,i,k);
 
@@ -277,7 +291,9 @@ gameStuffs = {
 					navBtns.disabled = true;
 					cycleBtn.disabled = false;
 				}
+				moveCount.innerHTML = bbb.loadFiles[i].moves;
 				navBtns.innerHTML = navAss[k];
+				navBtns.append(moveCount);
 			},2333);
 		}
 	},
@@ -304,8 +320,8 @@ gameStuffs = {
 		}else{
 			mp = "+";
 		}
-		var opval = (rH / 2) + op + (randPlanet / 3.14);
-		var mpval = (rL / 2) + mp + (randPlanet / 3.14);
+		var opval = (rH / 2) + op + (randPlanet / 5);
+		var mpval = (rL / 2) + mp + (randPlanet / 5);
 
 		function addHeights(s){
 		    var total= 0, s= s.match(/[+\-]*(\.\d+|\d+(\.\d+)?)/g) || [];
@@ -343,7 +359,6 @@ gameStuffs = {
 	},
 	meteorCollide: function(gameConsole,planet,meteor,bbb,i,k){
 		setTimeout(function(){
-			console.log(meteor);
 			meteor.remove();
 		},100);
 	},

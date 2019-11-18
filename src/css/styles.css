@@ -460,7 +460,7 @@ input[type=range]:focus::-ms-fill-upper {
 	margin: 0 1px;
 	padding: 8px 0;
 	background-color: rgba(60,60,70,0.9);
-	font-size: 14px;
+	font-size: 1.2vw;
 	cursor: default;
 	box-shadow: 0 0 1px #000 inset,0 0 1px #000 inset;
 }
@@ -553,6 +553,7 @@ input[type=range]:focus::-ms-fill-upper {
 	cursor:default;
 	z-index: 5;
 	padding: 5px;
+	font-size: 1em;
 }
 
 .terra {
@@ -563,10 +564,10 @@ input[type=range]:focus::-ms-fill-upper {
     margin: 0;
     display: block;
     background-image: url("../assets/backgrounds/terra.png");
+	font-size: .8em;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     box-shadow:inset  .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000; 
-
 }
 .land {
     position: relative;
@@ -576,6 +577,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin: 0;
     display: block;
     background-image: url("../assets/backgrounds/land.png");
+	font-size: .8em;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     box-shadow:inset  .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000; 
@@ -584,10 +586,13 @@ input[type=range]:focus::-ms-fill-upper {
 	position: relative;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
+	font-size: 1em;
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
     border-radius: 50%;
     margin: 0;
     display: block;
-    box-shadow:inset  .05em .3em .4em .05em #000000, inset .05em .3em .4em .05em #000000, inset .05em .3em .4em .05em #000000; 
+    box-shadow:inset  .5em 1em 2em .5em #000000, inset .5em 1em 2em .5em #000000, inset .5em 1em 2em .5em #000000; 
 
 }
 .oceans {
@@ -598,6 +603,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin: 0;
     display: block;
     background-image: url("../assets/backgrounds/ocean.png");
+	font-size: 1.6em;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     box-shadow:inset  .8em 1.6em 3.2em .8em #000000, inset .8em 1.6em 3.2em .8em #000000, inset .8em 1.6em 3.2em .8em #000000; 
@@ -610,10 +616,11 @@ input[type=range]:focus::-ms-fill-upper {
     margin: 0;
     display: block;
     background-image: url("../assets/backgrounds/clouds.png");
+	font-size: 1em;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     opacity:0.3;
-    box-shadow:inset  .1em .3em 2em .1em #000000, inset .1em .3em 2em .1em #000000, inset .1em .3em 2em .1em #000000; 
+    box-shadow:inset  1em 2em 3em 1em #000000, inset 1em 2em 3em 1em #000000, inset 1em 2em 3em 1em #000000; 
 
  }
 .meteor {

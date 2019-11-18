@@ -89,7 +89,7 @@ var newGameProgram = {
 				cType: ctc[1],
 				rType: rtr[1],
 				eType: ete[1],
-				matter: 199,
+				matter: 499,
 				life: 0,
 				timestamp: ts,
 				medals: 0,
@@ -98,15 +98,15 @@ var newGameProgram = {
 				gravity: 0.01,
 				items: {},
 				terra: 1,
-				water: 0,
-				atmos: .4,
+				water: 1,
+				atmos: .2,
 				land: 1,
 				ocean: 1,
 				cloud: .2,
 				satelites: 0,
 				gold: 0,
-				moves: 10,
-				gLevel: 10
+				moves: 1,
+				gLevel: 1
 			};
 
 			bbb.loadFiles[bbb.fileLookup] = gfObject;
