@@ -358,9 +358,10 @@ gameStuffs = {
 		},1);
 	},
 	meteorCollide: function(gameConsole,planet,meteor,bbb,i,k){
+		meteor.className = "meteor_collide";
 		setTimeout(function(){
 			meteor.remove();
-		},100);
+		},1010);
 	},
 	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
 		for (var j = 0; j < navAss1.length; j++) {

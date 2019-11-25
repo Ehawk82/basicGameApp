@@ -564,10 +564,11 @@ input[type=range]:focus::-ms-fill-upper {
     margin: 0;
     display: block;
     background-image: url("../assets/backgrounds/terra.png");
-	font-size: .8em;
+	font-size: 10px;
+	font-size: .5rem;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    box-shadow:inset  .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000, inset .4em .8em 1.6em .4em #000000; 
+    box-shadow:inset  .1rem .4rem .2rem .1rem rgba(0,0,0,1),inset .2rem 1rem .8rem .2rem rgba(0,0,0,.8);
 }
 .land {
     position: relative;
@@ -624,27 +625,44 @@ input[type=range]:focus::-ms-fill-upper {
 
  }
 .meteor {
-	background-color: white;
+    background-image: url("../assets/backgrounds/meteor.png");
+    background-size: 100% 100%;
 	position: absolute;
 	width: 2px;
 	height: 2px;
 	border-radius: 50%;
-	box-shadow: 0 0 1px lightblue, 0 0 1px lightblue, 0 0 1px lightblue, 0 0 1px lightblue;
 	z-index: 10;
+    box-shadow: inset -1px -1px 5px 5px rgba(0,0,0,0);
+
 }
 .meteor_left {
-	background-color: white;
+	background-image: url("../assets/backgrounds/meteor.png");
+    background-size: 100% 100%;
 	position: absolute;
-	width: 100px;
-	height: 100px;
+	width: 50px;
+	height: 50px;
 	left:-100px;
 	border-radius: 50%;
-	box-shadow: 0 0 4px lightblue, 0 0 4px lightblue, 0 0 4px lightblue, 0 0 4px lightblue;
 	z-index: 10;
+    box-shadow: inset .1rem .4rem .2rem .1rem rgba(0,0,0,1);
+}
+.meteor_collide {
+	background-color: white;
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	z-index: 10;
+    box-shadow: 0 0 10px rgba(255,200,200,1),0 0 15px rgba(255,200,200,1),0 0 20px rgba(255,200,200,1);
 }
 /*ID*/
 
 /*MULTIS*/
+.meteor, .meteor_left {
+	-webkit-animation-name: spin;
+  	-webkit-animation-duration: 4000ms;
+  	-webkit-animation-iteration-count: infinite;
+}
 html, body {
 	margin:0;
 	padding:0;
@@ -669,6 +687,9 @@ html,h1,button,p,div{
 .planet,.gameFilePage,.gameFilePage_full,.gameNav,.gameNav_full,.startMenu,.startMenu_full,.myScreen_full,.myScreen,.controlPage,.controlPage_full,.gFile,.gFile_full,.progressPage,.progressPage_full,.saveGamesPage,.saveGamesPage_full,.warnPage,.warnPage_full,.toolPage,.toolPage_full,.resPage,.resPage_full {
 	transition: 333ms all ease-in-out;
 }
+.meteor_collide {
+	transition:666ms all;
+}
 .meteor,.meteor_left {
 	transition: 2000ms all ease-in;
 }
@@ -683,7 +704,10 @@ html,h1,button,p,div{
 }
 
 /*KEYFRAMES*/
-
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
 /*MEDIA QUERIES*/
 /* phones, 600px */
 @media only screen and (max-width: 600px) {
