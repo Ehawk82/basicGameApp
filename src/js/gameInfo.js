@@ -294,7 +294,7 @@ gameStuffs = {
 				moveCount.innerHTML = bbb.loadFiles[i].moves;
 				navBtns.innerHTML = navAss[k];
 				navBtns.append(moveCount);
-			},2333);
+			},2666);
 		}
 	},
 	renderMeteor: function(gameConsole,planet,bbb,i,k){
@@ -361,7 +361,7 @@ gameStuffs = {
 		meteor.className = "meteor_collide";
 		setTimeout(function(){
 			meteor.remove();
-		},1010);
+		},666);
 	},
 	navAssets1: function(container,gameNav,gameNav1,navToggle,gameConsole,bbb,i){
 		for (var j = 0; j < navAss1.length; j++) {
