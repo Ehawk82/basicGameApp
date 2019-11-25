@@ -568,7 +568,7 @@ input[type=range]:focus::-ms-fill-upper {
 	font-size: .5rem;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    box-shadow:inset  .1rem .4rem .2rem .1rem rgba(0,0,0,1),inset .2rem 1rem .8rem .2rem rgba(0,0,0,.8);
+    box-shadow:inset  .1rem .4rem .2rem .1rem rgba(0,0,0,1),inset .1rem 1rem .5rem .1rem rgba(0,0,0,.9);
 }
 .land {
     position: relative;
@@ -622,7 +622,6 @@ input[type=range]:focus::-ms-fill-upper {
     background-repeat: no-repeat;
     opacity:0.3;
     box-shadow:inset  1em 2em 3em 1em #000000, inset 1em 2em 3em 1em #000000, inset 1em 2em 3em 1em #000000; 
-
  }
 .meteor {
     background-image: url("../assets/backgrounds/meteor.png");
@@ -632,8 +631,7 @@ input[type=range]:focus::-ms-fill-upper {
 	height: 2px;
 	border-radius: 50%;
 	z-index: 10;
-    box-shadow: inset -1px -1px 5px 5px rgba(0,0,0,0);
-
+    box-shadow: inset .1rem .4rem .2rem .1rem rgba(0,0,0,0);
 }
 .meteor_left {
 	background-image: url("../assets/backgrounds/meteor.png");
@@ -658,6 +656,7 @@ input[type=range]:focus::-ms-fill-upper {
 /*ID*/
 
 /*MULTIS*/
+
 .meteor, .meteor_left {
 	-webkit-animation-name: spin;
   	-webkit-animation-duration: 4000ms;
@@ -691,7 +690,7 @@ html,h1,button,p,div{
 	transition:666ms all;
 }
 .meteor,.meteor_left {
-	transition: 2000ms all ease-in;
+	transition: 2000ms;
 }
 .devLog, .settContainer, .loadContainer, .newGameContainer {
 	margin-top: 2px;
