@@ -567,7 +567,7 @@ input[type=range]:focus::-ms-fill-upper {
 	font-size: 10px;
 	font-size: 1rem;
     background-size: 100% 100%;
-    box-shadow: inset .5rem 2rem 1rem .5rem rgba(0,0,0,1),inset 1rem 4rem 2rem 1rem rgba(0,0,0,.75), inset 2rem 8rem 4rem 2rem rgba(0,0,0,.5), inset 3rem 16rem 6rem 3rem rgba(0,0,0,.25);
+    box-shadow: inset .2rem .8rem .4rem .2rem rgba(0,0,0,1),inset 1rem 4rem 2rem 1rem rgba(0,0,0,.75), inset 2rem 8rem 4rem 2rem rgba(0,0,0,.5), inset 3rem 16rem 6rem 3rem rgba(0,0,0,.25);
 }
 .land {
     position: relative;

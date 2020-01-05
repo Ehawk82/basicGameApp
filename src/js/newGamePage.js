@@ -101,7 +101,7 @@ var newGameProgram = {
 				water: 0,
 				atmos: 0,
 				land: 0,
-				ocean: 0,
+				ocean: .5,
 				cloud: 0,
 				satelites: 0,
 				gold: 0,
