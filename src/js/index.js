@@ -1,42 +1,45 @@
-var myUI,stBtnName,bgauser;
+var myUI,stBtnName,bgauser; /* global variables */
 /*
 if (!Date.now) {
     Date.now = function() { var ts; return ts = Math.floor(Date.now() / 1000) }
 }
 console.log(ts);
 */
-bgauser = {
-	gBool: false,
-	loadFiles: [],
-	fileLookup: 0,
-	userString: "",
-	appVolume: 0.5,
-	ambVolume: 0.5,
-	musicVolume: 0.5,
-	loopBool: false,
-	loopSpeed: 100,
-	member: false,
-	level: 1,
-	collection: {},
-	notes: {},
+/* user json */
+bgauser = {                    
+	gBool: false, /* boolean for game active/deactive status */
+	loadFiles: [], /* a place for game files */
+	fileLookup: 0, /* tracking how many saved games there are */
+	userString: "", /* a random strting */
+	appVolume: 0.5, /* main volume */
+	ambVolume: 0.5, /* ambient volume */
+	musicVolume: 0.5, /* music volume */
+	loopBool: false, /* if there is a loop. use this to turn on/off */
+	loopSpeed: 100, /* if there is a loop. set speed */
+	member: false, /* detect user member status */
+	level: 1, /* user global level */
+	collection: {}, /* collected objects get stored here */
+	notes: {}, /* any notes to display to the user */
 	gameTimeStamps: {
 		startingTime: "",
 		lastTimeOut: "",
 		currentTime: "",
 		diffTime: ""
 	},
-	cheats: false
+	cheats: false /* for cheats and to speed up testing */
 };
-stBtnName = ["NEW","LOAD","SETTINGS","CREDITS"];
+stBtnName = ["NEW","LOAD","SETTINGS","CREDITS"]; /* the names of the start buttons */
 
+/* the main user interface begins here */
 myUI = {
 	init: function(){
-		LSinit("bGAuser", bgauser);
+		LSinit("bGAuser", bgauser); /* initialize and name the template user json */
 
-		var bbb = parseLS("bGAuser");
-		myUI.loadUnits(bbb);
+		var bbb = parseLS("bGAuser"); /* call it and name it */
+		myUI.loadUnits(bbb); /* starting basic load */
 	},
 	loadUnits: function(bbb){
+		/* hooking start buttons */
 		var dvContain = createEle("div"),
 			startMenu = createEle("div"),
 		    startPage = createEle("div"),
@@ -49,8 +52,8 @@ myUI = {
 
 			startBtns.className = "startBtns";
 			startBtns.innerHTML = stBtnName[i];
-			startBtns.onclick = myUI.stBtnFunc(i,startMenu,myScreen,bbb);
-			myUI.startBtnSensor(startBtns,i,bbb);
+			startBtns.onclick = myUI.stBtnFunc(i,startMenu,myScreen,bbb); /* onclicks all point to stBtnFunc */
+			myUI.startBtnSensor(startBtns,i,bbb); /* sensing start buttons */
 
 			startMenu.append(startBtns);
 		}
@@ -66,11 +69,10 @@ myUI = {
 		body.append(dvContain);
 
 		setTimeout(function(){
-			makeFull(startMenu);
+			makeFull(startMenu); /* startMenu slides in */
 		},100);
 	},
 	startBtnSensor: function(startBtns,i,bbb){
-
 		if(i === 0){
 
 		}
@@ -91,9 +93,9 @@ myUI = {
 	},
 	stBtnFunc: function(i,startMenu,myScreen,bbb){
 		return function(){
-			
-			takeFull(startMenu);
-			var title = createEle("h1"), thingy
+			takeFull(startMenu); /* moves the start menu out of frame */
+			var title = createEle("h1"),
+				thingy,
 				pauseBtn = createEle("button"),
 				container = createEle("div"),
 				items = createEle("div");
